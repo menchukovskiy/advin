@@ -55,7 +55,7 @@
     --margin : 30px;
     --portfolio-box-border-radius:20px;
     --team-box-width: calc( (100vw - 2 * var(--fixed-size) - 6 * var(--margin))/4);
-    --team-box-height: calc( var(--team-box-width) * (9/7) );
+    --team-box-height: calc( var(--team-box-width) * (8/6) );
 
 }
 
@@ -80,6 +80,19 @@
 
     .portfolio_box:nth-of-type(6n) {
         margin-right: 0;
+    }
+
+    .team_box_about {
+        font-size: 1rem;
+    }
+
+    .team_box_name {
+        font-size: 1.7rem;
+        height: calc(var(--team-box-height) * .07 + 7%);
+    }
+
+    .team_box_sm {
+        height: calc( var(--team-box-height) * .1 + 7% );
     }
 }
 
@@ -1061,23 +1074,13 @@ nav a {
     overflow: hidden;
     padding-bottom: calc(var(--fixed-size) + 60px);
     padding-top: calc(var(--fixed-size) + 60px);
+    background-image: url('../img/abs_bg.png') ;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
-#home_team_bg{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-}
 
-#home_team_bg_wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: .6;
-}
 
 #home_team_content {
     width: 100%;
@@ -1089,24 +1092,113 @@ nav a {
 
 .team_box {
     width: var(--team-box-width);
-    overflow: hidden;
-    background-color: #212121;
+    background-color: var(--orange-color);
     height: var(--team-box-height);
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative; 
+    border-radius: 30px;
+    margin-right: calc(var(--margin) * 2);
+    margin-bottom: var(--margin);
+}
+
+.team_box:nth-of-type(4n),
+.team_box:last-of-type {
+    margin-right:0
 }
 
 .team_box_photo {
     width: inherit;
-    height: calc( var(--team-box-height) * 0.6 );
-    position: relative;
+    height: calc( var(--team-box-height) * 0.8 );
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: -7%;
+    overflow: hidden;
+}
+
+.team_box_content {
+    height: calc( var(--team-box-height) * 0.2 + 7% );
+    width: inherit;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    border-radius: 0 0 30px 30px;
+    overflow: hidden;
 }
 
 .team_box_photo img {
     height: 100%;
 }
+
+.team_box_name,
+.team_box_about {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.team_box_name {
+    font-size: 1.2rem;
+    font-family: 'Blender Pro Bold';
+    text-transform: uppercase;
+    height: calc( var(--team-box-height) * .08 + 7% );
+}
+
+.team_box_about {
+    font-size: .7rem;
+}
+
+.team_box_sm {
+    width: 100%;
+    background-color: #212121;
+    height: calc( var(--team-box-height) * .085 + 7% );
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: stretch;
+}
+
+.team_box_sm_link {
+    display: flex;
+    height: 100%;
+    fill: #fff;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.team_box_sm_link svg {
+    height: 45%;
+}
+
+.sm_link_in:hover {
+    background-color: #0a7aba;
+}
+
+.sm_link_fb:hover {
+    background-color: #0866ff;
+}
+
+.sm_link_ins:hover {
+    background-color: #ef7d3d;
+}
+
+.team_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+#home_team_content .title_text {
+    margin-bottom: var(--margin);
+}
+
+
 
 
 
