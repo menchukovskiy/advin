@@ -1095,7 +1095,7 @@ nav a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
+    position: relative; 
 }
 
 .team_box_photo {
