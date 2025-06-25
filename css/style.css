@@ -54,7 +54,8 @@
     --pr-box-cover-width: calc((40vw - 44px) * 0.45);
     --margin : 30px;
     --portfolio-box-border-radius:20px;
-    --team-box-width: calc( (100vw - 2 * var(--fixed-size) - 6 * var(--margin))/4)
+    --team-box-width: calc( (100vw - 2 * var(--fixed-size) - 6 * var(--margin))/4);
+    --team-box-height: calc( var(--team-box-width) * (9/7) );
 
 }
 
@@ -1090,18 +1091,21 @@ nav a {
     width: var(--team-box-width);
     overflow: hidden;
     background-color: #212121;
-    height: 400px;
+    height: var(--team-box-height);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     position: relative; 
 }
 
 .team_box_photo {
     width: inherit;
-    height: 250px;
+    height: calc( var(--team-box-height) * 0.6 );
     position: relative;
+}
+
+.team_box_photo img {
+    height: 100%;
 }
 
 
