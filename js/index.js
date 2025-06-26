@@ -1,4 +1,7 @@
 
+
+
+
 const createOdometer = (el, value) => {
     const odometer = new Odometer({
         el: el,
@@ -317,13 +320,19 @@ const init = () => {
 
 
 //Инициализация анимации
+/*
 window.onload = () => {
 	init();
 }
+    */
 
 window.addEventListener("scroll", initPortfolioFilter )
 
 
+document.addEventListener('DOMContentLoaded', function(){ 
+    document.getElementById("loader").remove()
+    init();
+});
 
 
 
