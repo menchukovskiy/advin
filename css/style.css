@@ -18,24 +18,6 @@
     font-style: normal;
 }
 
-.tekture_bold {
-    font-family: "Tektur", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-}
-
-.callout-title {
-    animation-delay: 0.25s;
-    animation-duration: 1.5s;
-}
-
-#menu_box.hidden .site-menu__main a {
-    transform: translateY(70px);
-    opacity: 0;
-}
-
-
 * {
     --btn-height: 52px;
     --btn-width: 52px;
@@ -58,6 +40,10 @@
     --team-box-width: calc( (100vw - 2 * var(--fixed-size) - 6 * var(--margin))/4);
     --team-box-height: calc( var(--team-box-width) * (8/6) );
 
+    --float-input-border-radius:100px;
+    --float-input-label-position: 20px;
+    --float-input-focus-color: var(--dark-color);
+    --float-input-hover-color: var(--grey-color);
 }
 
 @media (max-width: 1440px){
@@ -95,9 +81,40 @@
     .team_box_sm {
         height: calc( var(--team-box-height) * .1 + 7% );
     }
+
+    #home_callback_form_box {
+        top: calc(var(--fixed-size) + 100px);
+        bottom: calc(var(--fixed-size) + 100px);
+    }
+
+    .input_box {
+        margin-bottom: var(--margin);
+    }
+
+    #home_callback_form_box_wrap form {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        min-width: 35vw;
+    }
 }
 
+.tekture_bold {
+    font-family: "Tektur", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
 
+.callout-title {
+    animation-delay: 0.25s;
+    animation-duration: 1.5s;
+}
+
+#menu_box.hidden .site-menu__main a {
+    transform: translateY(70px);
+    opacity: 0;
+}
 
 body {
     background: #EBEBEB;
@@ -1227,8 +1244,8 @@ nav a {
     z-index: 1;
     background-color: #fff;
     border-radius: 30px;
-    top: calc(var(--fixed-size) + 100px);
-    bottom: calc(var(--fixed-size) + 100px);
+    top: calc(var(--fixed-size) + 80px);
+    bottom: calc(var(--fixed-size) + 80px);
     min-width: 30vw;
     min-height: 30vh;
     left: 28vw;
@@ -1239,7 +1256,28 @@ nav a {
     padding: var(--margin) var(--margin) var(--margin) 13vw;
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.input_box {
+    margin-bottom: calc( var(--margin) / 2 );
+}
+
+textarea.floating-label-input {
+    border-radius: 30px;
+    resize: none;
+}
+
+.textarea-box .floating-label {
+    top: 30px;
+}
+
+footer {
+    
+}
+
 
 
 

@@ -7,6 +7,7 @@
     --float-input-inside-label-color: #8d969d;
     --float-input-border-radius: 11px;
     --float-input-inside-font-size: 1rem;
+    --float-input-label-position: 16px;
 }
 
 .floating-label-container {
@@ -38,7 +39,7 @@
 
 .floating-label {
     position: absolute;
-    left: 16px;
+    left: var(--float-input-label-position);
     top: 50%;
     transform: translateY(-50%);
     color: var(--float-input-inside-label-color);
@@ -56,4 +57,8 @@
     font-size: 12px;
     color: var(--float-input-focus-color);
     background: var(--float-input-bg-color);
+}
+
+.floating-label-input:not(:placeholder-shown) {
+    border-color: var(--float-input-focus-color);
 }
