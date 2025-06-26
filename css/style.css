@@ -2,6 +2,7 @@
 @import url('flex.css');
 @import url('keyframes.css');
 @import url('animate.min.css');
+@import url('input.css');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Onest:wght@100..900&family=PT+Sans+Narrow:wght@400;700&family=Roboto:wght@400;500;700&family=Source+Code+Pro:ital@0;1&family=Tektur:wght@400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
@@ -1201,7 +1202,45 @@ nav a {
 #home_callback {
     background: #D75929;
     background: radial-gradient(circle,rgba(215, 89, 41, 1) 0%, rgba(155, 58, 23, 1) 100%);
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
 }
+
+#home_callback_dec {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 40vw;
+}
+
+#home_callback_dec img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+#home_callback_form_box {
+    position: absolute;
+    z-index: 1;
+    background-color: #fff;
+    border-radius: 30px;
+    top: calc(var(--fixed-size) + 100px);
+    bottom: calc(var(--fixed-size) + 100px);
+    min-width: 30vw;
+    min-height: 30vh;
+    left: 28vw;
+    width: calc(100vw - 28vw - 120px - (var(--fixed-size)*2) );
+}
+
+#home_callback_form_box_wrap {
+    padding: var(--margin) var(--margin) var(--margin) 13vw;
+    width: 100%;
+    height: 100%;
+}
+
 
 
 

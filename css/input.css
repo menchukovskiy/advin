@@ -1,0 +1,59 @@
+* {
+    --float-input-bg-color: #fff;
+    --float-input-focus-color: #4299e1;
+    --float-input-hover-color: #9ec3db;
+    --float-input-border-color: #c2c8cc;
+    --float-input-inside-color: #474a4c;
+    --float-input-inside-label-color: #8d969d;
+    --float-input-border-radius: 11px;
+    --float-input-inside-font-size: 1rem;
+}
+
+.floating-label-container {
+    position: relative;
+    margin: 20px 0;
+}
+
+.floating-label-input {
+    width: 100%;
+    padding: 16.5px 14px;
+    border: 1px solid var(--float-input-border-color);
+    border-radius: var(--float-input-border-radius);
+    background: var(--float-input-bg-color);
+    color: var(--float-input-inside-color);
+    font-size: var(--float-input-inside-font-size);
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.floating-label-input:focus {
+    border-color: var(--float-input-focus-color);
+    background: none;
+}
+
+.floating-label-input:hover {
+    border-color: var(--float-input-hover-color);
+}
+
+.floating-label {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--float-input-inside-label-color);
+    font-size: var(--float-input-inside-font-size);
+    pointer-events: none;
+    transition: all 0.3s ease;
+    background: transparent;
+    padding: 0 4px;
+}
+
+.floating-label-input:focus+.floating-label,
+.floating-label-input:not(:placeholder-shown)+.floating-label {
+    top: 0;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: var(--float-input-focus-color);
+    background: var(--float-input-bg-color);
+}
