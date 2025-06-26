@@ -1,0 +1,57 @@
+@media (max-width: 1440px){
+
+    * {
+        --portfolio-box-width: calc( (100vw - 2 * var(--fixed-size) - 3 * var(--margin))/4  );
+        --portfolio-box-height: calc( (100vw - 2 * var(--fixed-size) - 3 * var(--margin))/4  );
+    }
+
+    .portfolio_box:nth-of-type(4n) {
+        margin-right: 0;
+    }
+
+}
+
+@media (min-width: 1460px) and (max-width: 1920px) {
+    * {
+        --portfolio-box-width: calc( (100vw - 2 * var(--fixed-size) - 5 * var(--margin))/6  );
+        --portfolio-box-height: calc( (100vw - 2 * var(--fixed-size) - 5 * var(--margin))/6  );
+    }
+
+    .portfolio_box:nth-of-type(6n) {
+        margin-right: 0;
+    }
+
+    .team_box_about {
+        font-size: 1rem;
+    }
+
+    .team_box_name {
+        font-size: 1.7rem;
+        height: calc(var(--team-box-height) * .07 + 7%);
+    }
+
+    .team_box_sm {
+        height: calc( var(--team-box-height) * .1 + 7% );
+    }
+
+    #home_callback_form_box {
+        top: calc(var(--fixed-size) + 100px);
+        bottom: calc(var(--fixed-size) + 100px);
+    }
+
+    .input_box {
+        margin-bottom: var(--margin);
+    }
+
+    #home_callback_form_box_wrap form {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        min-width: 35vw;
+    }
+
+    .footer_contact_text_box {
+        font-size: 1.2rem;
+    }
+    
+}
