@@ -197,24 +197,6 @@ const initClientBox = () => {
     })
 }
 
-const initTeamBox = () => {
-    /*gsap.fromTo('#home_team_bg_wrap', {
-        y: "-10vh"
-    },{
-        y: "10vh",
-        scrollTrigger: {
-            trigger: '#home_team',
-            scrub: true,
-            start: "top bottom", // position of trigger meets the scroller position
-            snap: {
-                snapTo: 0.01, // 0.5 'cause the scroll animation range is 200vh for parallax effect
-                duration: 1,
-                ease: 'power4.inOut'
-            }
-        },
-        ease: 'none'
-    })*/
-}
 
 const initVideoBox = () => {
     gsap.fromTo('#home_video-box-wrap', {
@@ -329,9 +311,8 @@ const init = () => {
     initParallax()
     initSlides()
     initVideoBox()
-    initPortfolio()
+    //initPortfolio()
     initClientBox()
-    initTeamBox()
 }
 
 
@@ -351,9 +332,7 @@ $(function(e){
 
     $('body').on( 'click', '#show_site_menu', function(e){
         e.preventDefault();
-        
         $('#menu_box').removeClass('hidden');
-        
     } )
 
     $('body').on( 'click', '.site-menu__close', function(e){
@@ -369,9 +348,10 @@ $(function(e){
     $('body').on( 'click', '.left_sidebar__close', function(e){
         e.preventDefault()
         $('#left_sidebar').addClass('hide')
+        $('#left_sidebar').removeClass('in-view')
         setTimeout( () => {
             $('#left_sidebar').removeClass('hide')
-            $('#left_sidebar').removeClass('in-view')
+           
         }, 800 )
     } )
 

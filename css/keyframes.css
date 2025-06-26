@@ -85,3 +85,8 @@
     from { scale: .6; }
     to {scale: 1;}
 }
+
+@keyframes  portfolioBox {
+    from { scale: .6; opacity: 0; }
+    to {scale: 1; opacity: 1;}
+}

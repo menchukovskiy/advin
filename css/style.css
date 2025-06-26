@@ -1358,6 +1358,13 @@ footer > #footer_content{
     animation-range-end: 200px
 }
 
+.portfolio_box {
+    animation: portfolioBox linear;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end: 50px
+}
+
 
 
 
