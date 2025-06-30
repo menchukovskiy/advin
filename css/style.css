@@ -1243,3 +1243,19 @@ footer > #footer_content{
     background: #EBEBEB;
     background: var(--body-bg-gradient);
 }
+
+
+#video_box_header {
+    position: absolute;
+    width: 35vw;
+    z-index: 100;
+    left: calc( var(--fixed-size) + 30px );
+    mix-blend-mode: screen;
+    bottom: calc( var(--fixed-size) + 30px );
+}
+
+#video_box_header video {
+    width: inherit;
+    height: auto;
+    mix-blend-mode:screen;
+}

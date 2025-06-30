@@ -63,6 +63,7 @@ const slides = selectAll(".slide_screen");
 const portfolioSection = select('#home_portfolio')
 const portfolioFilter = select('.portfolio_category')
 const portfolioBox = selectAll('.portfolio_box')
+const homeScreenText = select('#home_screen_text')
 
 
 
@@ -319,12 +320,7 @@ const init = () => {
 }
 
 
-//Инициализация анимации
-/*
-window.onload = () => {
-	init();
-}
-    */
+
 
 window.addEventListener("scroll", initPortfolioFilter )
 
@@ -333,6 +329,15 @@ document.addEventListener('DOMContentLoaded', function(){
     document.getElementById("loader").remove()
     init();
 });
+
+/*
+window.addEventListener("mousemove", function(e){
+    let x = e.clientX / window.innerWidth;
+	let y = e.clientY / window.innerHeight;  
+	homeScreenText.style.transform = 'translate(-' + x * 25 + 'px, -' + y * 25 + 'px)';
+} )
+*/
+
 
 
 
