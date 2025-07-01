@@ -1,6 +1,6 @@
 .pumpAnimation {
     animation: animationPump linear infinite;
-    animation-duration: 15s;
+    animation-duration: 14s;
 }
 
 .circleAnimation {
@@ -16,6 +16,13 @@
     object-fit: cover;
     width: 100%;
     height: 100%;
+}
+
+.show {
+    animation: showDec linear;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    opacity: 0;
 }
 
 @keyframes animationPump {
@@ -43,11 +50,50 @@
 @keyframes animationCircle {
     0% {
         offset-distance: 0%;
-        /* стартуем в начале траектории */
     }
 
     100% {
         offset-distance: 100%;
-        /* и прекращаем движение в конце траектории */
     }
+}
+
+@keyframes showDec {
+
+    from,
+    20%,
+    40%,
+    60%,
+    80%,
+    to {
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    0% {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+
+    40% {
+        transform: scale3d(0.9, 0.9, 0.9);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+
+    80% {
+        transform: scale3d(0.97, 0.97, 0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+
+
 }
