@@ -331,6 +331,7 @@ document.addEventListener('DOMContentLoaded', function(){
     setTimeout( () => {
         $('#dec_el__001').removeClass('show')
         $('#dec_el__001').addClass('pumpAnimation')
+        
        
     }, 1500 )
 });

@@ -1267,10 +1267,51 @@ footer > #footer_content{
     width: 100%;
 }
 
-#dec_el__001 {
+#dec_el__001,
+#dec_el__002,
+#dec_el__003,
+#dec_el__004 {
     position: absolute;
-    right: calc( var(--fixed-size) + 2%);
     z-index: 20;
+}
+
+#dec_el__001 {
+    right: calc( var(--fixed-size) + 2%);
+}
+
+#dec_el__002 {
+    width: 20px;
+    height: 20px;
+    top: calc( var(--fixed-size) + 100px);
+    left: 50%;
+}
+
+#dec_el__003 {
+    width: 15px;
+    height: 15px;
+    right: calc( var(--fixed-size) + 20%);
+    top: 40%;
+    z-index: 21;
+}
+
+#dec_el__004 {
+    width: 25px;
+    height: 25px;
+    left: calc( var(--fixed-size) + 20%);
+    top: 30%;
+    z-index: 1;
+}
+
+#dec_small_box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#home_screen_text {
+    z-index: 2;
 }
 
 
