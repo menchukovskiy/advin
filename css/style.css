@@ -4,6 +4,7 @@
 @import url('animate.min.css');
 @import url('input.css');
 @import url('mediaScreen.css');
+@import url('animateHeaderHome.css');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Onest:wght@100..900&family=PT+Sans+Narrow:wght@400;700&family=Roboto:wght@400;500;700&family=Source+Code+Pro:ital@0;1&family=Tektur:wght@400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
@@ -536,6 +537,7 @@ nav a {text-decoration: none;}
     min-height: inherit;
     padding-top: var(--padding-frame);
     padding-bottom: var(--padding-frame);
+    overflow: hidden;
 }
 
 .odometer.plus::after {
@@ -1246,6 +1248,7 @@ footer > #footer_content{
 
 
 #video_box_header {
+    display: none;
     position: absolute;
     width: 35vw;
     z-index: 100;
@@ -1259,3 +1262,15 @@ footer > #footer_content{
     height: auto;
     mix-blend-mode:screen;
 }
+
+.headerDec img {
+    width: 100%;
+}
+
+#dec_el__001 {
+    position: absolute;
+    right: calc( var(--fixed-size) + 2%);
+    z-index: 20;
+}
+
+
