@@ -3,7 +3,6 @@
 @import url('keyframes.css');
 @import url('animate.min.css');
 @import url('input.css');
-@import url('mediaScreen.css');
 @import url('animateHeaderHome.css');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Onest:wght@100..900&family=PT+Sans+Narrow:wght@400;700&family=Roboto:wght@400;500;700&family=Source+Code+Pro:ital@0;1&family=Tektur:wght@400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
@@ -575,8 +574,8 @@ nav a {text-decoration: none;}
 }
 
 #odometer_list {
-    margin-bottom: 3.5rem;
-    margin-right: -5%;
+    margin-bottom: 6rem;
+    margin-left: -4%;
 }
 
 .header_title {
@@ -1248,13 +1247,11 @@ footer > #footer_content{
 
 
 #video_box_header {
-    display: none;
     position: absolute;
     width: 35vw;
     z-index: 100;
-    left: calc( var(--fixed-size) + 30px );
-    mix-blend-mode: screen;
-    bottom: calc( var(--fixed-size) + 30px );
+    right: calc( var(--fixed-size) + 10px );
+    bottom: calc( var(--fixed-size) + 50px );
 }
 
 #video_box_header video {
@@ -1277,6 +1274,7 @@ footer > #footer_content{
 
 #dec_el__001 {
     right: calc( var(--fixed-size) + 2%);
+    display: none;
 }
 
 #dec_el__002 {
@@ -1289,7 +1287,7 @@ footer > #footer_content{
 #dec_el__003 {
     width: 15px;
     height: 15px;
-    right: calc( var(--fixed-size) + 20%);
+    left: calc( var(--fixed-size) + 50%);
     top: 40%;
     z-index: 21;
 }
@@ -1313,5 +1311,6 @@ footer > #footer_content{
 #home_screen_text {
     z-index: 2;
 }
+
 
 

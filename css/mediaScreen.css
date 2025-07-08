@@ -14,6 +14,8 @@
         width: 26vw;
     }
 
+   
+
 }
 
 @media (min-width: 1460px) and (max-width: 1920px) {
@@ -62,6 +64,21 @@
     #dec_el__001 {
         width: 37vw;
         top: calc( var(--padding-frame) + 50px );
+    }
+
+    #odometer_list {
+        margin-left: -5%;
+        margin-bottom: 7.5rem;
+    }
+
+    #video_box_header {
+        bottom: calc( var(--fixed-size) + 100px );
+        right: calc( var(--fixed-size) + 10px );
+    }
+
+    #home_screen_text {
+        top: 8vh;
+        position: relative;
     }
     
 }
