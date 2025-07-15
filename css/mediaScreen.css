@@ -14,6 +14,10 @@
         width: 26vw;
     }
 
+    .header_title {
+        font-size: 7rem;
+    }
+
    
 
 }
@@ -67,12 +71,12 @@
     }
 
     #odometer_list {
-        margin-left: -5%;
+        margin-left: -2%;
         margin-bottom: 7.5rem;
     }
 
     #video_box_header {
-        bottom: calc( var(--fixed-size) + 100px );
+        bottom: calc( var(--fixed-size) + 50px );
         right: calc( var(--fixed-size) + 10px );
     }
 
@@ -80,5 +84,24 @@
         top: 8vh;
         position: relative;
     }
+
+    .odometer_data {
+        font-size: 6rem;
+    }
+
+    .odometer_about {
+        width: 55%;
+        font-size: 1rem;
+    }
+
+    .header_title {
+        font-size: 9.5rem
+    }
+
+    .header_secondary_title {
+        font-size: 2rem;
+    }
+
+
     
 }
