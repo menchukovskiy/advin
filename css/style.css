@@ -1267,10 +1267,10 @@ footer > #footer_content{
 
 #video_box_header {
     position: absolute;
-    width: 35vw;
+    width: 30vw;
     z-index: 100;
     right: calc( var(--fixed-size) + 10px );
-    bottom: calc( var(--fixed-size) + 50px );
+    bottom: calc( var(--fixed-size) + 100px );
 }
 
 #video_box_header video {
@@ -1384,4 +1384,26 @@ footer > #footer_content{
 .team_box_video video {
     object-fit: cover;
     width: 100%;
+}
+
+
+#odometer_list .odometer_box{
+    min-width: 15vw;
+}
+
+
+
+.play {
+    animation: colorPuls linear;
+    animation-play-state: running;
+    /*animation-delay: 1s;*/
+    animation-duration: 2s;
+}
+
+strong {
+    color: var(--instagram-color);
+}
+
+#odometer_list .btn_active {
+    margin-left: 3%;
 }

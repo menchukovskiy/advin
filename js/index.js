@@ -37,7 +37,7 @@ const subscribersOdometer2 = document.querySelector("#od_2");
 
 const subscribersOdometer3 = document.querySelector("#od_3");
 
-const subscribersOdometer4 = document.querySelector("#od_4");
+
 
 const subscribersOdometer5 = document.querySelector("#od_5");
 
@@ -45,18 +45,80 @@ const subscribersOdometer6 = document.querySelector("#od_6");
 
 const subscribersOdometer7 = document.querySelector("#od_7");
 
+const start = 1;
+const frameAnimationDuration = 200
+let headerNumberAnimationProgress = 0
+let missNumberAnimationProgress = 0
+
+const headerNumberAnimation = () => {
+    window.requestAnimationFrame(headerNumberAnimation);
+
+    headerNumberAnimationProgress += start;
+  
+
+  if (headerNumberAnimationProgress > frameAnimationDuration ) {
+    subscribersOdometer1.classList.add('play')
+  } else {
+    subscribersOdometer3.classList.add('play')
+  }
+
+ if (headerNumberAnimationProgress > frameAnimationDuration * 2) {
+    subscribersOdometer2.classList.add('play')
+  } 
+
+  if (headerNumberAnimationProgress > frameAnimationDuration * 3) {
+   subscribersOdometer1.classList.remove('play')
+   subscribersOdometer2.classList.remove('play')
+   subscribersOdometer3.classList.remove('play')
+   headerNumberAnimationProgress = 0
+  } 
+
+}
+
+const missNumberAnimation = () => {
+    window.requestAnimationFrame(missNumberAnimation);
+
+    missNumberAnimationProgress += start;
+  
+
+  if (missNumberAnimationProgress > frameAnimationDuration ) {
+    subscribersOdometer6.classList.add('play')
+  } else {
+    subscribersOdometer5.classList.add('play')
+  }
+
+ if (missNumberAnimationProgress > frameAnimationDuration * 2) {
+    subscribersOdometer7.classList.add('play')
+  } 
+
+  if (missNumberAnimationProgress > frameAnimationDuration * 3) {
+   subscribersOdometer5.classList.remove('play')
+   subscribersOdometer6.classList.remove('play')
+   subscribersOdometer7.classList.remove('play')
+   missNumberAnimationProgress = 0
+  } 
+
+}
+
+
+
 const initOdometer = () => {
-    createOdometer(subscribersOdometer1, 250);
+    /*createOdometer(subscribersOdometer1, 250);
     createOdometer(subscribersOdometer2, 120);
     createOdometer(subscribersOdometer3, 8);
     createOdometer(subscribersOdometer4, 15);
+    */
 }
 
+
 const initOdometer2 = () => {
+    /*
     createOdometer(subscribersOdometer5, 30);
     createOdometer(subscribersOdometer6, 7);
     createOdometer(subscribersOdometer7, 85);
+    */
 }
+
 
 
 
@@ -240,7 +302,7 @@ const initVideoBox = () => {
     let tl = gsap.timeline({
         scrollTrigger: {
             trigger: box,
-            start: "15% 50%", // position of trigger meets the scroller position
+            start: "5% 20%", // position of trigger meets the scroller position
         }
     })
 
@@ -250,8 +312,14 @@ const initVideoBox = () => {
         scale: .8,
         opacity: 0,
         duration: 1,
-        onStart: initOdometer2,
     })
+
+     tl.from(box.querySelectorAll('.odometer_box'), {
+        ease: "power4",
+        scale: .8,
+        opacity: 0,
+        onComplete: missNumberAnimation
+    },0)
 
     .from(box.querySelectorAll('.about_text'),{
         ease: "power4", 
@@ -260,12 +328,16 @@ const initVideoBox = () => {
         duration: 1,
     },0)
 
+   
+
     .from(box.querySelectorAll('#home_video-box-content-btn'),{
         ease: "power4", 
         y: "+=5vw",
         opacity: 0,
         duration: 1,
     },0.1)
+
+    
 
 
 }
@@ -338,8 +410,21 @@ const init = () => {
 
 
 
+/*
+
+
+
+
+
 
 window.addEventListener("scroll", initPortfolioFilter )
+*/
+
+
+
+
+
+//window.requestAnimationFrame(step);
 
 
 document.addEventListener('DOMContentLoaded', function(){ 
@@ -348,9 +433,14 @@ document.addEventListener('DOMContentLoaded', function(){
     setTimeout( () => {
         $('#dec_el__001').removeClass('show')
         $('#dec_el__001').addClass('pumpAnimation')
-        
+        headerNumberAnimation()
        
     }, 1500 )
+
+    
+    
+
+    //const headerIntervalID = window.setInterval( animateHomeHeader , 6000);
 });
 
 /*
