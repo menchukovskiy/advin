@@ -55,7 +55,6 @@
     }
 
     #home_callback_form_box_wrap form {
-        display: flex;
         flex-direction: column;
         align-items: stretch;
         min-width: 35vw;
@@ -95,7 +94,7 @@
     }
 
     .header_title {
-        font-size: 9.5rem
+        font-size: 8.5rem
     }
 
     .header_secondary_title {

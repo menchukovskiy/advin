@@ -37,10 +37,25 @@ const subscribersOdometer2 = document.querySelector("#od_2");
 
 const subscribersOdometer3 = document.querySelector("#od_3");
 
+const subscribersOdometer4 = document.querySelector("#od_4");
+
+const subscribersOdometer5 = document.querySelector("#od_5");
+
+const subscribersOdometer6 = document.querySelector("#od_6");
+
+const subscribersOdometer7 = document.querySelector("#od_7");
+
 const initOdometer = () => {
-    createOdometer(subscribersOdometer1, 180);
-    createOdometer(subscribersOdometer2, 35);
-    createOdometer(subscribersOdometer3, 1000000);
+    createOdometer(subscribersOdometer1, 250);
+    createOdometer(subscribersOdometer2, 120);
+    createOdometer(subscribersOdometer3, 8);
+    createOdometer(subscribersOdometer4, 15);
+}
+
+const initOdometer2 = () => {
+    createOdometer(subscribersOdometer5, 30);
+    createOdometer(subscribersOdometer6, 7);
+    createOdometer(subscribersOdometer7, 85);
 }
 
 
@@ -235,6 +250,7 @@ const initVideoBox = () => {
         scale: .8,
         opacity: 0,
         duration: 1,
+        onStart: initOdometer2,
     })
 
     .from(box.querySelectorAll('.about_text'),{
@@ -298,12 +314,13 @@ portfolioBox.forEach((box, i) => {
 
 const initPortfolioFilter = () => {
     
-   
+   /*
     if( window.scrollY + 50  >= portfolioSection.offsetTop && ( portfolioSection.clientHeight + portfolioSection.offsetTop - window.innerHeight*0.25) > window.scrollY ){
         portfolioFilter.classList.add("open")
     } else {
         portfolioFilter.classList.remove("open")
     }
+        */
 }
 
 
@@ -393,5 +410,18 @@ $(function(e){
 })
 
 
+
+
+
+const myVideo = document.getElementById('testVideo');
+
+    myVideo.addEventListener('mouseenter', () => {
+        myVideo.play();
+    });
+
+    myVideo.addEventListener('mouseleave', () => {
+        myVideo.pause();
+        myVideo.currentTime = 0; // Optional: Resets the video to the beginning on mouseout
+    });
 
 
