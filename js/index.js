@@ -1,4 +1,133 @@
 
+select = e => document.querySelector(e)
+selectAll = e => document.querySelectorAll(e)
+
+const homePortfolioSettings = {
+    showItems: 3,
+    itemsEdge: 60,
+    sliderDuration: 1200,
+    spacing: 0,
+    loop: true,
+    autoplay: true
+}
+
+const initHomeSliderPortfolio = () => {
+    const homePortfolioSloder = new Sliderm('#home_portfolio_list_slider', {
+        arrow: false,
+        pagination: false,
+        grouping: false,
+        loop: homePortfolioSettings.loop,
+        preview: true,
+        columns: homePortfolioSettings.showItems,
+        duration: homePortfolioSettings.sliderDuration,
+        spacing: homePortfolioSettings.spacing,
+        autoplay: homePortfolioSettings.autoplay,
+        align: 'center',
+        _preview: {
+            edge: homePortfolioSettings.itemsEdge,
+        }
+    });
+
+    document.querySelectorAll('.sliderm__slide').forEach(element => {
+
+        if (element.getAttribute('data-order') > homePortfolioSettings.showItems) {
+            element.classList.add('op5');
+        }
+
+        if (element.classList.contains('sliderm__slide--clone')) {
+            element.classList.add('op5');
+        }
+    });
+
+
+
+
+    const countPorfolioSlide = homePortfolioSloder.getItemCount();
+
+
+    homePortfolioSloder.on('slide.start', (s) => {
+
+        let endViewSlide = 0
+
+
+
+
+        endViewSlide = s.getPosition() + homePortfolioSettings.showItems + 1;
+
+
+
+        if (endViewSlide > countPorfolioSlide) {
+            endViewSlide -= countPorfolioSlide;
+        }
+
+
+
+        document.querySelectorAll('.sliderm__slide').forEach(element => {
+            element.classList.remove('op5'); // Добавляем CSS класс 'new-class'
+        });
+
+        document.querySelectorAll('.sliderm__slide[data-order="' + s.getPosition() + '"]').forEach(element => {
+            element.classList.add('op5'); // Добавляем CSS класс 'new-class'
+        });
+
+        document.querySelectorAll('.sliderm__slide[data-order="' + endViewSlide + '"]').forEach(element => {
+            element.classList.add('op5');
+        });
+
+
+
+    });
+
+    const next = document.getElementById('home_portfolio_list_slider_next');
+    const nextSlide = homePortfolioSloder.adaptEvent(next);
+    nextSlide.on('click', () => {
+        homePortfolioSloder.slideTo('>');
+    });
+
+    const back = document.getElementById('home_portfolio_list_slider_prev');
+    const backSlide = homePortfolioSloder.adaptEvent(back);
+    backSlide.on('click', () => {
+        homePortfolioSloder.slideTo('<');
+
+        let prevSlide = 0
+        const position = homePortfolioSloder.getPosition()
+
+        document.querySelectorAll('.sliderm__slide').forEach(element => {
+            element.classList.remove('op5');
+        });
+
+
+        if (position === 0) {
+            prevSlide = countPorfolioSlide - 1
+        }
+
+        if (position > 0) {
+            prevSlide = position - 1
+            if (prevSlide === 0) {
+                prevSlide = countPorfolioSlide
+            }
+        }
+
+
+        let endViewSlide = 0
+
+        endViewSlide = position + homePortfolioSettings.showItems;
+
+        if (endViewSlide > countPorfolioSlide) {
+            endViewSlide -= countPorfolioSlide;
+        }
+
+        document.querySelectorAll('.sliderm__slide[data-order="' + endViewSlide + '"]').forEach(element => {
+            element.classList.add('op5');
+        });
+
+        document.querySelectorAll('.sliderm__slide[data-order="' + prevSlide + '"]').forEach(element => {
+            element.classList.add('op5');
+        });
+
+    });
+
+}
 
 
 
@@ -54,24 +183,24 @@ const headerNumberAnimation = () => {
     window.requestAnimationFrame(headerNumberAnimation);
 
     headerNumberAnimationProgress += start;
-  
 
-  if (headerNumberAnimationProgress > frameAnimationDuration ) {
-    subscribersOdometer1.classList.add('play')
-  } else {
-    subscribersOdometer3.classList.add('play')
-  }
 
- if (headerNumberAnimationProgress > frameAnimationDuration * 2) {
-    subscribersOdometer2.classList.add('play')
-  } 
+    if (headerNumberAnimationProgress > frameAnimationDuration) {
+        subscribersOdometer1.classList.add('play')
+    } else {
+        subscribersOdometer3.classList.add('play')
+    }
 
-  if (headerNumberAnimationProgress > frameAnimationDuration * 3) {
-   subscribersOdometer1.classList.remove('play')
-   subscribersOdometer2.classList.remove('play')
-   subscribersOdometer3.classList.remove('play')
-   headerNumberAnimationProgress = 0
-  } 
+    if (headerNumberAnimationProgress > frameAnimationDuration * 2) {
+        subscribersOdometer2.classList.add('play')
+    }
+
+    if (headerNumberAnimationProgress > frameAnimationDuration * 3) {
+        subscribersOdometer1.classList.remove('play')
+        subscribersOdometer2.classList.remove('play')
+        subscribersOdometer3.classList.remove('play')
+        headerNumberAnimationProgress = 0
+    }
 
 }
 
@@ -79,24 +208,24 @@ const missNumberAnimation = () => {
     window.requestAnimationFrame(missNumberAnimation);
 
     missNumberAnimationProgress += start;
-  
 
-  if (missNumberAnimationProgress > frameAnimationDuration ) {
-    subscribersOdometer6.classList.add('play')
-  } else {
-    subscribersOdometer5.classList.add('play')
-  }
 
- if (missNumberAnimationProgress > frameAnimationDuration * 2) {
-    subscribersOdometer7.classList.add('play')
-  } 
+    if (missNumberAnimationProgress > frameAnimationDuration) {
+        subscribersOdometer6.classList.add('play')
+    } else {
+        subscribersOdometer5.classList.add('play')
+    }
 
-  if (missNumberAnimationProgress > frameAnimationDuration * 3) {
-   subscribersOdometer5.classList.remove('play')
-   subscribersOdometer6.classList.remove('play')
-   subscribersOdometer7.classList.remove('play')
-   missNumberAnimationProgress = 0
-  } 
+    if (missNumberAnimationProgress > frameAnimationDuration * 2) {
+        subscribersOdometer7.classList.add('play')
+    }
+
+    if (missNumberAnimationProgress > frameAnimationDuration * 3) {
+        subscribersOdometer5.classList.remove('play')
+        subscribersOdometer6.classList.remove('play')
+        subscribersOdometer7.classList.remove('play')
+        missNumberAnimationProgress = 0
+    }
 
 }
 
@@ -132,8 +261,7 @@ gsap.registerPlugin(ScrollToPlugin)
 gsap.registerPlugin(ScrollSmoother)
 gsap.registerPlugin(SplitText);
 
-select = e => document.querySelector(e)
-selectAll = e => document.querySelectorAll(e)
+
 
 const stage = select('.stage')
 const slides = selectAll(".slide_screen");
@@ -148,33 +276,33 @@ const homeScreenText = select('#home_screen_text')
 
 const initHeader = () => {
 
-    let tl = gsap.timeline({delay: 0.5});
+    let tl = gsap.timeline({ delay: 0.5 });
     tl.from('#logo', {
         x: -40,
         opacity: 0,
         duration: 2,
         ease: 'power4'
     })
-    .from('#top_bar_right',{
-        x: 40,
-        opacity: 0,
-        duration: 2,
-        ease: 'power4'
-    }, 0)
-    .from('.bottom_bar',{
-        y: 40,
-        opacity: 0,
-        duration: 2,
-        ease: 'power4',
-        
-    },0)
-    .from('#odometer_list',{
-        ease: 'power4',
-        y:10,
-        duration:1,
-        opacity: 0,
-        onStart: initOdometer
-    },0)
+        .from('#top_bar_right', {
+            x: 40,
+            opacity: 0,
+            duration: 2,
+            ease: 'power4'
+        }, 0)
+        .from('.bottom_bar', {
+            y: 40,
+            opacity: 0,
+            duration: 2,
+            ease: 'power4',
+
+        }, 0)
+        .from('#odometer_list', {
+            ease: 'power4',
+            y: 10,
+            duration: 1,
+            opacity: 0,
+            onStart: initOdometer
+        }, 0)
 
     let stl = gsap.timeline({
         scrollTrigger: {
@@ -190,19 +318,19 @@ const initHeader = () => {
         scale: 2,
         ease: 'power4.in',
         duration: 3,
-        
+
     })
 
 }
 
 const initParallax = () => {
-    
+
     slides.forEach((slide, i) => {
         let imageWrappers = slide.querySelectorAll('.slide_screen_cover_image_wrap');
-        
+
         gsap.fromTo(imageWrappers, {
             y: "-30vh"
-        },{
+        }, {
             y: "30vh",
             scrollTrigger: {
                 trigger: slide,
@@ -220,15 +348,15 @@ const initParallax = () => {
 }
 
 const initSlides = () => {
-    slides.forEach((slide, i) => {   
-        
+    slides.forEach((slide, i) => {
+
         let tl = gsap.timeline({
             scrollTrigger: {
                 trigger: slide,
                 start: "20% 50%", // position of trigger meets the scroller position
             }
         });
- 
+
         tl.from(slide.querySelectorAll('.slide_screen_about_title'), {
             ease: "power4",
             //y: "+=5vh",
@@ -237,33 +365,34 @@ const initSlides = () => {
             duration: 1,
         })
 
-        .from(slide.querySelectorAll('.slide_screen_about_text'),{
-            ease: "power4", 
-            y: "+=5vh",
-            opacity: 0,
-            duration: 1,
-        },0)
+            .from(slide.querySelectorAll('.slide_screen_about_text'), {
+                ease: "power4",
+                y: "+=5vh",
+                opacity: 0,
+                duration: 1,
+            }, 0)
 
-        .from(slide.querySelectorAll('.slide_screen_about_btn'),{
-            ease: "power4", 
-            x: "-=5vw",
-            opacity: 0,
-            duration: 1,
-        },0.1)
+            .from(slide.querySelectorAll('.slide_screen_about_btn'), {
+                ease: "power4",
+                x: "-=5vw",
+                opacity: 0,
+                duration: 1,
+            }, 0.1)
 
 
-        
-        
-        
-	});
-    
+
+
+
+    });
+
 }
 
 const initClientBox = () => {
+
     gsap.fromTo('#home_clients_video-box-wrap', {
-        y: "-30vh"
-    },{
-        y: "30vh",
+        y: "-5vh"
+    }, {
+        y: "5vh",
         scrollTrigger: {
             trigger: '#home_clients_video-box',
             scrub: true,
@@ -276,13 +405,14 @@ const initClientBox = () => {
         },
         ease: 'none'
     })
+
 }
 
 
 const initVideoBox = () => {
     gsap.fromTo('#home_video-box-wrap', {
         y: "-30vh"
-    },{
+    }, {
         y: "30vh",
         scrollTrigger: {
             trigger: '#home_video-box',
@@ -314,98 +444,98 @@ const initVideoBox = () => {
         duration: 1,
     })
 
-     tl.from(box.querySelectorAll('.odometer_box'), {
+    tl.from(box.querySelectorAll('.odometer_box'), {
         ease: "power4",
         scale: .8,
         opacity: 0,
         onComplete: missNumberAnimation
-    },0)
+    }, 0)
 
-    .from(box.querySelectorAll('.about_text'),{
-        ease: "power4", 
-        y: "+=5vh",
-        opacity: 0,
-        duration: 1,
-    },0)
+        .from(box.querySelectorAll('.about_text'), {
+            ease: "power4",
+            y: "+=5vh",
+            opacity: 0,
+            duration: 1,
+        }, 0)
 
-   
 
-    .from(box.querySelectorAll('#home_video-box-content-btn'),{
-        ease: "power4", 
-        y: "+=5vw",
-        opacity: 0,
-        duration: 1,
-    },0.1)
 
-    
+        .from(box.querySelectorAll('#home_video-box-content-btn'), {
+            ease: "power4",
+            y: "+=5vw",
+            opacity: 0,
+            duration: 1,
+        }, 0.1)
+
+
 
 
 }
 
 const initPortfolio = () => {
-/*
-    gsap.fromTo('#home_portfolio_bg_wrap', {
-        y: "-10vh"
-    },{
-        y: "10vh",
-        scrollTrigger: {
-            trigger: '#home_portfolio',
-            scrub: true,
-            start: "top bottom", // position of trigger meets the scroller position
-            snap: {
-                snapTo: 0.5, // 0.5 'cause the scroll animation range is 200vh for parallax effect
-                duration: 1,
-                ease: 'power4.inOut'
+    /*
+        gsap.fromTo('#home_portfolio_bg_wrap', {
+            y: "-10vh"
+        },{
+            y: "10vh",
+            scrollTrigger: {
+                trigger: '#home_portfolio',
+                scrub: true,
+                start: "top bottom", // position of trigger meets the scroller position
+                snap: {
+                    snapTo: 0.5, // 0.5 'cause the scroll animation range is 200vh for parallax effect
+                    duration: 1,
+                    ease: 'power4.inOut'
+                }
+            },
+            ease: 'none'
+        })
+    */
+
+    portfolioBox.forEach((box, i) => {
+
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '#home_portfolio',
+                start: "0% 50%", // position of trigger meets the scroller position
             }
-        },
-        ease: 'none'
-    })
-*/
+        });
 
-portfolioBox.forEach((box, i) => {   
-        
-    let tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: '#home_portfolio',
-            start: "0% 50%", // position of trigger meets the scroller position
-        }
+        tl.from(box, {
+            ease: "power4",
+            //y: "+=5vh",
+            scale: .8,
+            opacity: 0,
+            duration: 1,
+        })
+
+
     });
-
-    tl.from(box, {
-        ease: "power4",
-        //y: "+=5vh",
-        scale: .8,
-        opacity: 0,
-        duration: 1,
-    })
-
-    
-});
 
 }
 
 const initPortfolioFilter = () => {
-    
-   /*
-    if( window.scrollY + 50  >= portfolioSection.offsetTop && ( portfolioSection.clientHeight + portfolioSection.offsetTop - window.innerHeight*0.25) > window.scrollY ){
-        portfolioFilter.classList.add("open")
-    } else {
-        portfolioFilter.classList.remove("open")
-    }
-        */
+
+    /*
+     if( window.scrollY + 50  >= portfolioSection.offsetTop && ( portfolioSection.clientHeight + portfolioSection.offsetTop - window.innerHeight*0.25) > window.scrollY ){
+         portfolioFilter.classList.add("open")
+     } else {
+         portfolioFilter.classList.remove("open")
+     }
+         */
 }
 
 
 
 //Ф-ия инициализация анимации
 const init = () => {
-    gsap.set( stage, { autoAlpha: 1 })
+    gsap.set(stage, { autoAlpha: 1 })
     initHeader()
     initParallax()
     initSlides()
     initVideoBox()
-    //initPortfolio()
     initClientBox()
+    initHomeSliderPortfolio()
 }
 
 
@@ -427,18 +557,18 @@ window.addEventListener("scroll", initPortfolioFilter )
 //window.requestAnimationFrame(step);
 
 
-document.addEventListener('DOMContentLoaded', function(){ 
+document.addEventListener('DOMContentLoaded', function () {
     document.getElementById("loader").remove()
     init();
-    setTimeout( () => {
+    setTimeout(() => {
         $('#dec_el__001').removeClass('show')
         $('#dec_el__001').addClass('pumpAnimation')
         headerNumberAnimation()
-       
-    }, 1500 )
 
-    
-    
+    }, 1500)
+
+
+
 
     //const headerIntervalID = window.setInterval( animateHomeHeader , 6000);
 });
@@ -446,44 +576,44 @@ document.addEventListener('DOMContentLoaded', function(){
 /*
 window.addEventListener("mousemove", function(e){
     let x = e.clientX / window.innerWidth;
-	let y = e.clientY / window.innerHeight;  
-	homeScreenText.style.transform = 'translate(-' + x * 25 + 'px, -' + y * 25 + 'px)';
+    let y = e.clientY / window.innerHeight;  
+    homeScreenText.style.transform = 'translate(-' + x * 25 + 'px, -' + y * 25 + 'px)';
 } )
 */
 
 
 
 
-$(function(e){
-	"use strict";
+$(function (e) {
+    "use strict";
 
-    $('body').on( 'click', '#show_site_menu', function(e){
+    $('body').on('click', '#show_site_menu', function (e) {
         e.preventDefault();
         $('#menu_box').removeClass('hidden');
-    } )
+    })
 
-    $('body').on( 'click', '.site-menu__close', function(e){
+    $('body').on('click', '.site-menu__close', function (e) {
         e.preventDefault();
         $('#menu_box').addClass('hidden');
-    } )
+    })
 
-    $('body').on( 'click', '[data-action="show_left_sidebar"]', function(e){
+    $('body').on('click', '[data-action="show_left_sidebar"]', function (e) {
         e.preventDefault()
         $('#left_sidebar').addClass('in-view')
-    } )
+    })
 
-    $('body').on( 'click', '.left_sidebar__close', function(e){
+    $('body').on('click', '.left_sidebar__close', function (e) {
         e.preventDefault()
         $('#left_sidebar').addClass('hide')
         $('#left_sidebar').removeClass('in-view')
-        setTimeout( () => {
+        setTimeout(() => {
             $('#left_sidebar').removeClass('hide')
-           
-        }, 800 )
-    } )
+
+        }, 800)
+    })
 
 
-   
+
 
 
     $('.clients_logo_list').slick({
@@ -491,11 +621,11 @@ $(function(e){
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 2000,
-        arrows:false,
-        dots:false,
-        pauseOnFocus:false,
-        pauseOnHover:false,
-      });
+        arrows: false,
+        dots: false,
+        pauseOnFocus: false,
+        pauseOnHover: false,
+    });
 
 })
 
@@ -505,13 +635,13 @@ $(function(e){
 
 const myVideo = document.getElementById('testVideo');
 
-    myVideo.addEventListener('mouseenter', () => {
-        myVideo.play();
-    });
+myVideo.addEventListener('mouseenter', () => {
+    myVideo.play();
+});
 
-    myVideo.addEventListener('mouseleave', () => {
-        myVideo.pause();
-        myVideo.currentTime = 0; // Optional: Resets the video to the beginning on mouseout
-    });
+myVideo.addEventListener('mouseleave', () => {
+    myVideo.pause();
+    myVideo.currentTime = 0; // Optional: Resets the video to the beginning on mouseout
+});
 
 
