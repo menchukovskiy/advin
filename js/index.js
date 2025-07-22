@@ -11,6 +11,15 @@ const homePortfolioSettings = {
     autoplay: true
 }
 
+const homeTeamSettings = {
+    itemsEdge: '5rem',
+    sliderDuration: 1200,
+    spacing: 0,
+    loop: 'loop',
+    autoplay: false
+}
+
+
 const initHomeSliderPortfolio = () => {
     const homePortfolioSloder = new Sliderm('#home_portfolio_list_slider', {
         arrow: false,
@@ -28,7 +37,7 @@ const initHomeSliderPortfolio = () => {
         }
     });
 
-    document.querySelectorAll('.sliderm__slide').forEach(element => {
+    document.querySelectorAll('#home_portfolio_list .sliderm__slide').forEach(element => {
 
         if (element.getAttribute('data-order') > homePortfolioSettings.showItems) {
             element.classList.add('op5');
@@ -62,15 +71,15 @@ const initHomeSliderPortfolio = () => {
 
 
 
-        document.querySelectorAll('.sliderm__slide').forEach(element => {
-            element.classList.remove('op5'); // Добавляем CSS класс 'new-class'
+        document.querySelectorAll('#home_portfolio_list .sliderm__slide').forEach(element => {
+            element.classList.remove('op5');
         });
 
-        document.querySelectorAll('.sliderm__slide[data-order="' + s.getPosition() + '"]').forEach(element => {
-            element.classList.add('op5'); // Добавляем CSS класс 'new-class'
+        document.querySelectorAll('#home_portfolio_list .sliderm__slide[data-order="' + s.getPosition() + '"]').forEach(element => {
+            element.classList.add('op5');
         });
 
-        document.querySelectorAll('.sliderm__slide[data-order="' + endViewSlide + '"]').forEach(element => {
+        document.querySelectorAll('#home_portfolio_list .sliderm__slide[data-order="' + endViewSlide + '"]').forEach(element => {
             element.classList.add('op5');
         });
 
@@ -92,7 +101,7 @@ const initHomeSliderPortfolio = () => {
         let prevSlide = 0
         const position = homePortfolioSloder.getPosition()
 
-        document.querySelectorAll('.sliderm__slide').forEach(element => {
+        document.querySelectorAll('#home_portfolio_list .sliderm__slide').forEach(element => {
             element.classList.remove('op5');
         });
 
@@ -117,11 +126,11 @@ const initHomeSliderPortfolio = () => {
             endViewSlide -= countPorfolioSlide;
         }
 
-        document.querySelectorAll('.sliderm__slide[data-order="' + endViewSlide + '"]').forEach(element => {
+        document.querySelectorAll('#home_portfolio_list .sliderm__slide[data-order="' + endViewSlide + '"]').forEach(element => {
             element.classList.add('op5');
         });
 
-        document.querySelectorAll('.sliderm__slide[data-order="' + prevSlide + '"]').forEach(element => {
+        document.querySelectorAll('#home_portfolio_list .sliderm__slide[data-order="' + prevSlide + '"]').forEach(element => {
             element.classList.add('op5');
         });
 
@@ -129,6 +138,28 @@ const initHomeSliderPortfolio = () => {
 
 }
 
+
+const initHomeSliderTeam = () => {
+    new Splide('.splide', {
+        type: homeTeamSettings.loop,
+        padding: homeTeamSettings.itemsEdge,
+        speed: homeTeamSettings.sliderDuration,
+        pagination: false
+    }).mount();
+
+    document.querySelectorAll('#home_team_slider .splide__slide').forEach(element => {
+
+        element.addEventListener('mouseenter', () => {
+            element.querySelector('.home_team_slider_content_cover_video').play()
+        });
+
+        element.addEventListener('mouseleave', () => {
+            element.querySelector('.home_team_slider_content_cover_video').pause();
+            element.querySelector('.home_team_slider_content_cover_video').currentTime = 0;
+        });
+    });
+
+}
 
 
 const createOdometer = (el, value) => {
@@ -536,6 +567,7 @@ const init = () => {
     initVideoBox()
     initClientBox()
     initHomeSliderPortfolio()
+    initHomeSliderTeam()
 }
 
 
