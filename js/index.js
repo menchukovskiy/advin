@@ -19,6 +19,25 @@ const homeTeamSettings = {
     autoplay: false
 }
 
+const initHomeArticle = () => {
+    document.querySelectorAll('.home_article_item').forEach(item => {
+
+        item.addEventListener('mouseenter', () => {
+            document.querySelector('.home_article_conteyner .home_article_item').classList.remove('open')
+            item.classList.add('open');
+        });
+
+        item.addEventListener('mouseleave', () => {
+            item.classList.remove('open');
+        });
+
+    });
+
+    document.querySelector('.home_article_conteyner').addEventListener('mouseleave', () => {
+        document.querySelector('.home_article_conteyner .home_article_item:first-of-type').classList.add('open')
+    });
+}
+
 
 const initHomeSliderPortfolio = () => {
     const homePortfolioSloder = new Sliderm('#home_portfolio_list_slider', {
@@ -568,6 +587,7 @@ const init = () => {
     initClientBox()
     initHomeSliderPortfolio()
     initHomeSliderTeam()
+    initHomeArticle()
 }
 
 
