@@ -157,7 +157,6 @@ const initHomeSliderPortfolio = () => {
 
 }
 
-
 const initHomeSliderTeam = () => {
     new Splide('.splide', {
         type: homeTeamSettings.loop,
@@ -178,6 +177,59 @@ const initHomeSliderTeam = () => {
         });
     });
 
+}
+
+const initHomeIndastry = () => {
+    const nextBtn = document.querySelector('#home_indastry .next');
+    const prevBtn = document.querySelector('#home_indastry .prev');
+    const carousel = document.querySelector('#home_indastry .carousel');
+    const list = document.querySelector('#home_indastry .list');
+    const item = document.querySelector(' #home_indastry.item');
+
+    let timeRunning = 5000;
+    let timeAutoNext = 7000;
+
+    nextBtn.onclick = function () {
+        showSlider('next');
+    }
+
+    prevBtn.onclick = function () {
+        showSlider('prev');
+    }
+
+    let runTimeOut;
+
+    let runNextAuto = setTimeout(() => {
+        nextBtn.click();
+    }, timeAutoNext);
+
+
+    function showSlider(type) {
+        let sliderItemsDom = list.querySelectorAll('.carousel .list .item');
+
+        if (type === 'next') {
+            list.appendChild(sliderItemsDom[0]);
+            carousel.classList.add('next');
+        } else {
+            list.prepend(sliderItemsDom[sliderItemsDom.length - 1]);
+            carousel.classList.add('prev');
+        }
+
+        clearTimeout(runTimeOut);
+
+        runTimeOut = setTimeout(() => {
+            carousel.classList.remove('next');
+            carousel.classList.remove('prev');
+        }, timeRunning)
+
+        clearTimeout(runNextAuto);
+
+        runNextAuto = setTimeout(() => {
+            nextBtn.click();
+        }, timeAutoNext)
+
+
+    }
 }
 
 
@@ -588,6 +640,7 @@ const init = () => {
     initHomeSliderPortfolio()
     initHomeSliderTeam()
     initHomeArticle()
+    initHomeIndastry()
 }
 
 
