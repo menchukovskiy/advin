@@ -38,7 +38,6 @@ const initHomeArticle = () => {
     });
 }
 
-
 const initHomeSliderPortfolio = () => {
     const homePortfolioSloder = new Sliderm('#home_portfolio_list_slider', {
         arrow: false,
@@ -180,7 +179,7 @@ const initHomeSliderTeam = () => {
 }
 
 const initHomeIndastry = () => {
-    const nextBtn = document.querySelector('#home_indastry .next');
+   const nextBtn = document.querySelector('#home_indastry .next');
     const prevBtn = document.querySelector('#home_indastry .prev');
     const carousel = document.querySelector('#home_indastry .carousel');
     const list = document.querySelector('#home_indastry .list');
@@ -188,6 +187,28 @@ const initHomeIndastry = () => {
 
     let timeRunning = 5000;
     let timeAutoNext = 7000;
+
+    
+
+    list.querySelectorAll('.carousel .list .item').forEach( item => {
+        item.addEventListener('click', () => {
+            let sliderItemsDom = list.querySelectorAll('.carousel .list .item');
+
+            list.insertBefore( item, sliderItemsDom[1]  )
+            //list.appendChild(sliderItemsDom[0]);
+            carousel.classList.add('next');
+            
+             runTimeOut = setTimeout(() => {
+                carousel.classList.remove('next');
+                carousel.classList.remove('prev');
+            }, timeRunning)
+
+        });
+    } )
+
+
+    
+    
 
     nextBtn.onclick = function () {
         showSlider('next');
@@ -206,6 +227,8 @@ const initHomeIndastry = () => {
 
     function showSlider(type) {
         let sliderItemsDom = list.querySelectorAll('.carousel .list .item');
+
+        console.log(sliderItemsDom)
 
         if (type === 'next') {
             list.appendChild(sliderItemsDom[0]);
@@ -231,7 +254,6 @@ const initHomeIndastry = () => {
 
     }
 }
-
 
 const createOdometer = (el, value) => {
     const odometer = new Odometer({
@@ -313,19 +335,19 @@ const missNumberAnimation = () => {
 
 
     if (missNumberAnimationProgress > frameAnimationDuration) {
-        subscribersOdometer6.classList.add('play')
+        subscribersOdometer6.classList.add('play2')
     } else {
-        subscribersOdometer5.classList.add('play')
+        subscribersOdometer5.classList.add('play2')
     }
 
     if (missNumberAnimationProgress > frameAnimationDuration * 2) {
-        subscribersOdometer7.classList.add('play')
+        subscribersOdometer7.classList.add('play2')
     }
 
     if (missNumberAnimationProgress > frameAnimationDuration * 3) {
-        subscribersOdometer5.classList.remove('play')
-        subscribersOdometer6.classList.remove('play')
-        subscribersOdometer7.classList.remove('play')
+        subscribersOdometer5.classList.remove('play2')
+        subscribersOdometer6.classList.remove('play2')
+        subscribersOdometer7.classList.remove('play2')
         missNumberAnimationProgress = 0
     }
 
@@ -713,7 +735,7 @@ $(function (e) {
 
 
     $('.clients_logo_list').slick({
-        slidesToShow: 5,
+        slidesToShow: 8,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 2000,
