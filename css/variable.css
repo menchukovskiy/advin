@@ -31,7 +31,7 @@
     --float-input-label-position: 20px;
     --float-input-focus-color: var(--dark-color);
     --float-input-hover-color: var(--grey-color);
-    --footer-height:400px;
+    --footer-height:550px;
     --padding-frame: calc(var(--fixed-size) + 60px);
     --review-logo-height:100px;
     --soc-team-link-size: 40px;

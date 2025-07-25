@@ -1204,10 +1204,10 @@ footer {
     padding-bottom: var(--padding-frame);
     padding-top: var(--margin);
     display: grid;
-    grid-template-columns: .8fr 2.5fr 1fr;
+    grid-template-columns: .8fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     gap: var(--margin);
     color: #acacac;
-    align-items: center;
 }
 
 #footer_logo {
@@ -2202,3 +2202,18 @@ strong {
 .small_title {
     font-size: 70px !important;
 }
+
+.footer_nav {
+    list-style: none;
+}
+
+.footer_nav li {
+    padding: 3px;
+}
+
+.footer_nav a {
+    text-decoration: none;
+    color: #acacac;
+}
+
+#bottom_bar_rigth {opacity: 0;}
