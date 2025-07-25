@@ -228,7 +228,7 @@ const initHomeIndastry = () => {
     function showSlider(type) {
         let sliderItemsDom = list.querySelectorAll('.carousel .list .item');
 
-        console.log(sliderItemsDom)
+        
 
         if (type === 'next') {
             list.appendChild(sliderItemsDom[0]);
@@ -532,7 +532,6 @@ const initClientBox = () => {
 
 }
 
-
 const initVideoBox = () => {
     gsap.fromTo('#home_video-box-wrap', {
         y: "-30vh"
@@ -649,7 +648,6 @@ const init = () => {
     initParallax()
     initSlides()
     initVideoBox()
-    initClientBox()
     initHomeSliderPortfolio()
     initHomeSliderTeam()
     initHomeArticle()
