@@ -1421,7 +1421,7 @@ footer>#footer_content {
 }
 
 #home_callback_form_box_wrap .btn_active {
-    margin: 30px auto;
+    margin: 30px auto 0;
 }
 
 .scroll-btn .btn {
@@ -1646,7 +1646,7 @@ strong {
 
 .review_box_content_logo {
     background-color: var(--white-color);
-    width: auto;
+    width: fit-content;
     height: var(--review-logo-height);
     padding: 0 10px;
     display: flex;
@@ -1706,9 +1706,10 @@ strong {
 
 .home_team_slider_content_name_main {
     font-family: 'Blender Pro Bold';
-    font-size: 4rem;
+    font-size: 3.2rem;
     line-height: .8;
     text-transform: uppercase;
+    z-index: 2;
 }
 
 .home_team_slider_content_name_main,
@@ -1753,6 +1754,7 @@ strong {
     display: flex;
     flex-direction: column;
     justify-content: end;
+    align-items: center;
 }
 
 .home_team_slider_content_about {
@@ -1763,7 +1765,7 @@ strong {
 
 .home_team_slider_content_cover video {
     object-fit: cover;
-    width: 100%;
+    width: 113%;
 }
 
 .quote {

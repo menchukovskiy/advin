@@ -12,7 +12,7 @@ const homePortfolioSettings = {
 }
 
 const homeTeamSettings = {
-    itemsEdge: '5rem',
+    itemsEdge: '8rem',
     sliderDuration: 1200,
     spacing: 0,
     loop: 'loop',
@@ -616,16 +616,7 @@ const initPortfolio = () => {
 
 }
 
-const initPortfolioFilter = () => {
 
-    /*
-     if( window.scrollY + 50  >= portfolioSection.offsetTop && ( portfolioSection.clientHeight + portfolioSection.offsetTop - window.innerHeight*0.25) > window.scrollY ){
-         portfolioFilter.classList.add("open")
-     } else {
-         portfolioFilter.classList.remove("open")
-     }
-         */
-}
 
 
 
@@ -733,20 +724,5 @@ $(function (e) {
     });
 
 })
-
-
-
-
-
-const myVideo = document.getElementById('testVideo');
-
-myVideo.addEventListener('mouseenter', () => {
-    myVideo.play();
-});
-
-myVideo.addEventListener('mouseleave', () => {
-    myVideo.pause();
-    myVideo.currentTime = 0; // Optional: Resets the video to the beginning on mouseout
-});
 
 
