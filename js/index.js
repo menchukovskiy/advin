@@ -13,10 +13,11 @@ const homePortfolioSettings = {
 
 const homeTeamSettings = {
     itemsEdge: '15rem',
-    sliderDuration: 1200,
+    sliderDuration: 500,
     spacing: 0,
     loop: 'loop',
-    autoplay: false
+    autoplay: false,
+    interval: 4000
 }
 
 const initHomeArticle = () => {
@@ -161,7 +162,11 @@ const initHomeSliderTeam = () => {
         type: homeTeamSettings.loop,
         padding: homeTeamSettings.itemsEdge,
         speed: homeTeamSettings.sliderDuration,
-        pagination: false
+        pagination: false,
+        interval: homeTeamSettings.interval,
+        autoplay: homeTeamSettings.autoplay,
+        pauseOnHover: true,
+        focus: 'center'
     }).mount();
 
     document.querySelectorAll('#home_team_slider .splide__slide').forEach(element => {
@@ -352,7 +357,6 @@ const missNumberAnimation = () => {
     }
 
 }
-
 
 
 const initOdometer = () => {

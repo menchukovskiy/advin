@@ -2311,3 +2311,19 @@ strong {
     margin-bottom: 10px;
 }
 
+
+#home_team_slider .splide__slide {
+    opacity: 1;
+    transition: .2s;
+}
+
+#home_team_slider .splide__slide.is-prev,
+#home_team_slider .splide__slide.is-next {
+   // opacity: .5;
+    //transition: all .8;
+}
+
+#home_team_slider .splide__slide[aria-hidden="true"] {
+    opacity: .5;
+}
+
