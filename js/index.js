@@ -12,7 +12,7 @@ const homePortfolioSettings = {
 }
 
 const homeTeamSettings = {
-    itemsEdge: '8rem',
+    itemsEdge: '15rem',
     sliderDuration: 1200,
     spacing: 0,
     loop: 'loop',
