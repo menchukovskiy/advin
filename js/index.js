@@ -8,7 +8,7 @@ const homePortfolioSettings = {
     sliderDuration: 1200,
     spacing: 0,
     loop: true,
-    autoplay: true
+    autoplay: false
 }
 
 const homeTeamSettings = {
@@ -571,13 +571,13 @@ const initVideoBox = () => {
         duration: 1,
     })
 
-    tl.from(box.querySelectorAll('.odometer_box'), {
+   /* tl.from(box.querySelectorAll('.odometer_box'), {
         ease: "power4",
         scale: .8,
         opacity: 0,
         onComplete: missNumberAnimation
     }, 0)
-
+*/
         .from(box.querySelectorAll('.about_text'), {
             ease: "power4",
             y: "+=5vh",
