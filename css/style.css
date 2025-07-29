@@ -767,7 +767,7 @@ nav a {
 }
 
 #home_video-box {
-   /*z-index: -1;*/
+    /*z-index: -1;*/
 }
 
 #home_clients_video-box {
@@ -2204,7 +2204,7 @@ strong {
 
 #home_indastry .arrows {
     position: absolute;
-    bottom: calc(var(--padding-frame) + 4vh);
+    bottom: calc(var(--padding-frame) + 8vh + 70px);
     left: var(--padding-frame);
     z-index: 100;
     width: fit-content;
@@ -2219,12 +2219,13 @@ strong {
     background-color: #fff;
     color: var(--dark-color);
     border-radius: 11px;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
     font-weight: bold;
     padding: 0 15px;
+    opacity: 0;
 }
 
 #home_indastry .arrows button {
@@ -2264,10 +2265,12 @@ strong {
     color: #acacac;
 }
 
-#bottom_bar_rigth {opacity: 0;}
+#bottom_bar_rigth {
+    opacity: 0;
+}
 
-#home_indastry .carousel .list .item:nth-child(1) .smallTitle, 
-#home_indastry .carousel .list .item:nth-child(2) .smallTitle{
+#home_indastry .carousel .list .item:nth-child(1) .smallTitle,
+#home_indastry .carousel .list .item:nth-child(2) .smallTitle {
     opacity: 0;
 }
 
@@ -2324,7 +2327,7 @@ strong {
 
 #home_team_slider .splide__slide.is-prev,
 #home_team_slider .splide__slide.is-next {
-   // opacity: .5;
+    // opacity: .5;
     //transition: all .8;
 }
 
@@ -2332,3 +2335,41 @@ strong {
     opacity: .5;
 }
 
+.rollTextWrap {
+    display: flex;
+    overflow-x: hidden;
+    text-transform: uppercase;
+    color: #ffffffdf;
+    text-shadow: 3px 3px 4px #f1f1f1cc;
+    left: var(--padding-frame);
+    position: absolute;
+    z-index: 100;
+    width: calc( 67vw - var(--padding-frame) - 15px );
+    bottom: calc(var(--padding-frame) + 4vh);
+
+}
+
+.rollText {
+    font-size: 70px;
+    font-size: sans-serif;
+    line-height: 1;
+    white-space: nowrap;
+    display: inline-block;
+    font-family: 'Blender Pro Bold';
+}
+
+.rt1 {
+    animation: marquee1 20s infinite linear;
+    animation-delay: -20s;
+}
+
+.rt2 {
+    animation: marquee2 20s infinite linear;
+    animation-delay: -10s;
+}
+
+
+.rollText:after {
+    content: 'обери свогю індустрію';
+    padding: 0 15px;
+}
