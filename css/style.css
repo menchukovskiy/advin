@@ -2379,3 +2379,17 @@ strong {
     padding: 0 15px;
     padding-right: 30px;
 }*/
+
+#serv_btn .btn.open {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.lp_page .btn {
+    opacity: .7;
+    transform: scale(.9);
+}
+
+.lp_page .btn:hover {
+    opacity: .9;
+}
