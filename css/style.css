@@ -1768,6 +1768,7 @@ strong {
     width: fit-content;
     margin-left: 10px;
     margin-right: 15px;
+    font-size: .8rem;
 }
 
 
@@ -2392,4 +2393,126 @@ strong {
 
 .lp_page .btn:hover {
     opacity: .9;
+}
+
+#ar_portfolio {
+    padding-top: var(--fixed-size);
+}
+
+#ar_portfolio_wrap {
+    width: 100%;
+    overflow: hidden;
+    height: calc(100vh - 2 * var(--fixed-size));
+    position: relative;
+}
+
+#sliderArPort,
+#sliderArPort .splide__track {
+    height: inherit;
+}
+
+#sliderBoxAr {
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    bottom: var(--ar-portfolio-bottom);
+}
+
+#phoneBoxAr {
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    z-index: 200;
+    bottom: calc( var(--ar-portfolio-bottom) - 5px );
+}
+
+#phoneBoxAr img {
+    height: auto;
+    width: 100%;
+}
+
+#sliderBoxAr .splide__slide {
+    overflow: hidden;
+}
+
+.ar_portfolio_box {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.ar_portfolio_box_video {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ar_portfolio_box_video video {
+    object-fit: cover;
+    width: 100%;
+    height: 110%;
+}
+
+#sliderBoxAr .slideBox {
+    height: 85%;
+    transition: 200ms;
+    opacity: .4;
+}
+
+#sliderBoxAr .slideBox.is-active {
+    height: 100%;
+    opacity: 1;
+    transition: 200ms;
+}
+
+#sliderArPort-list {
+    align-items: center;
+}
+
+.slideBox.is-active .ar_portfolio_box_about {
+    opacity: 1;
+}
+
+.ar_portfolio_box_about {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background: linear-gradient(0deg, rgba(0, 0, 0, .9) 0%, rgba(0, 0, 0, 0.44) 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+.ar_portfolio_box_about_tag {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.ar_portfolio_box_about_title {
+    position: absolute;
+    bottom: 30px;
+    left: 10px;
+    right: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.tagBox {
+    background-color: #fff136;
+    padding: 2px 4px;
+    border-radius: 5px;
+    font-size: .8rem;
 }

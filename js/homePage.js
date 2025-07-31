@@ -307,6 +307,7 @@ let headerNumberAnimationProgress = 0
 let missNumberAnimationProgress = 0
 
 const headerNumberAnimation = () => {
+   /*
     window.requestAnimationFrame(headerNumberAnimation);
 
     headerNumberAnimationProgress += start;
@@ -328,7 +329,7 @@ const headerNumberAnimation = () => {
         subscribersOdometer3.classList.remove('play')
         headerNumberAnimationProgress = 0
     }
-
+*/
 }
 
 const missNumberAnimation = () => {
