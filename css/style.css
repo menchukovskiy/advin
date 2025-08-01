@@ -2463,15 +2463,17 @@ strong {
 }
 
 #sliderBoxAr .slideBox {
-    height: 85%;
+    height: 70%;
     transition: 200ms;
     opacity: .4;
+    border-radius: 20px;
 }
 
 #sliderBoxAr .slideBox.is-active {
     height: 100%;
     opacity: 1;
     transition: 200ms;
+    border-radius: 0;
 }
 
 #sliderArPort-list {
