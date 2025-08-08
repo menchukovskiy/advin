@@ -1,6 +1,6 @@
 
-select = e => document.querySelector(e)
-selectAll = e => document.querySelectorAll(e)
+select = e => document.querySelector(e);
+selectAll = e => document.querySelectorAll(e);
 
 const homePortfolioSettings = {
     showItems: 3,
@@ -40,7 +40,7 @@ const initHomeArticle = () => {
 }
 
 const initHomeSliderPortfolio = () => {
-    const homePortfolioSloder = new Sliderm('#home_portfolio_list_slider', {
+  /*  const homePortfolioSloder = new Sliderm('#home_portfolio_list_slider', {
         arrow: false,
         pagination: false,
         grouping: false,
@@ -154,6 +154,7 @@ const initHomeSliderPortfolio = () => {
         });
 
     });
+    */
 
 }
 
@@ -601,7 +602,6 @@ document.addEventListener('DOMContentLoaded', function () {
         $('#dec_el__001').removeClass('show')
         $('#dec_el__001').addClass('pumpAnimation')
         headerNumberAnimation()
-
     }, 1500)
 });
 

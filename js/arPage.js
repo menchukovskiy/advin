@@ -15,8 +15,6 @@ const arPorfolioSetting = {
     wrapID: 'sliderBoxAr'
 }
 
-
-
 const initPhoneBorder = () => {
     const borderBox = document.querySelector('#' + arPorfolioSetting.borderID)
     const slideWidth = document.querySelector('.slideBox').offsetWidth
@@ -131,13 +129,110 @@ const initIndastry = () => {
     }
 }
 
+const initLpHomeStartScreen = () => {
+    const headerWrapper = document.querySelectorAll('.header_title .letters');
+    const headerWrapperSecond = document.querySelector('.header_secondary_title .letters');
+
+    headerWrapper.forEach(item => {
+        item.innerHTML = item.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+    })
+
+    anime.timeline()
+        .add({
+            targets: '.header_title .letter',
+            rotateY: [-90, 0],
+            duration: 10000,
+            delay: 500,
+            //delay: (el, i) => 45 * i
+        })
+
+    anime.timeline()
+        .add({
+            targets: '.header_secondary_title, .lp_start_screen_btn',
+            translateX: [-40, 0],
+            translateZ: 0,
+            opacity: [0, 1],
+            easing: "easeOutExpo",
+            duration: 1200,
+            //delay: 500,
+            delay: (el, i) => 500 + 30 * i
+        })
+
+    anime.timeline()
+        .add({
+            targets: '.lp_start_screen_media',
+            translateX: [40, 0],
+            translateZ: 0,
+            opacity: [0, 1],
+            easing: "easeOutExpo",
+            duration: 1200,
+            //delay: 500,
+            delay: (el, i) => 500 + 30 * i
+        })
+
+    VANTA.DOTS({
+        el: "#decoration",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: true,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0x202020,
+        color2: 0x2ab3,
+        backgroundColor: 0xffffff,
+        spacing: 28.00,
+        showLines: false
+    })
+
+
+
+
+
+
+
+}
+
+const initSolution = () => {
+    const tabButton = document.querySelectorAll('.tabButton')
+    const tabContent = document.querySelectorAll('.tabContent')
+
+    const resetTab = () => {
+        tabButton.forEach(item => item.classList.remove('active'))
+        tabContent.forEach(item => item.classList.remove('active'))
+    }
+
+
+
+    tabButton.forEach((element, key) => {
+        if (!key) {
+            element.classList.add('active');
+            tabContent[0].classList.add('active');
+        }
+
+        element.addEventListener('click', () => {
+            console.log()
+            resetTab()
+            element.classList.add('active');
+            tabContent[key].classList.add('active');
+
+        });
+    });
+
+
+
+
+}
+
 
 const init = () => {
     gsap.set(stage, { autoAlpha: 1 })
     initIndastry()
     initArPortfoloi()
+    initLpHomeStartScreen()
+    initSolution()
 }
-
 
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById("loader").remove()

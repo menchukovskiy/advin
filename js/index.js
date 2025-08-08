@@ -28,8 +28,6 @@ $(function (e) {
 
 
 
-
-
     $('.clients_logo_list').slick({
         slidesToShow: 8,
         slidesToScroll: 1,
