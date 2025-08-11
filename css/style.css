@@ -776,13 +776,20 @@ nav a {
 }
 
 #home_video-box video,
-#home_clients_video-box video,
-#home_team_video-box video {
+#home_clients_video-box video {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
     position: absolute;
     opacity: .3;
+}
+
+#home_team_video-box video {
+    width: 100vw;
+    object-fit: cover;
+    position: absolute;
+    opacity: .3;
+    height: 100%;
 }
 
 #home_video-box-content {
@@ -1045,7 +1052,7 @@ nav a {
 
 #home_team {
     overflow: hidden;
-    padding-bottom: var(--padding-frame);
+    /*padding-bottom: var(--padding-frame);*/
     padding-top: 50px;
     /*background-image: url('../img/abs_bg.png');*/
     background-color: var(--dark-color);
@@ -2428,6 +2435,7 @@ strong {
     left: 50%;
     z-index: 200;
     bottom: calc(var(--ar-portfolio-bottom) - 5px);
+    pointer-events: none;
 }
 
 #phoneBoxAr img {
@@ -2504,6 +2512,10 @@ strong {
     position: absolute;
     right: 10px;
     top: 10px;
+    display: flex;
+    justify-content: end;
+    row-gap: 5px;
+    column-gap: 5px;
 }
 
 .ar_portfolio_box_about_title {
@@ -2511,12 +2523,17 @@ strong {
     bottom: 30px;
     left: 10px;
     right: 10px;
-    text-align: center;
     color: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 5px;
+    font-size: .8rem;
 }
 
 .tagBox {
-    background-color: #fff136;
+    background-color: var(--orange-color);
+    color: #fff;
     padding: 2px 4px;
     border-radius: 5px;
     font-size: .8rem;
@@ -2563,8 +2580,8 @@ strong {
 
 #home_vac {
     min-height: 50vh;
-    background: #FF5821;
-    background: radial-gradient(circle, rgba(255, 88, 33, 1) 0%, rgba(224, 81, 34, 1) 100%);
+    position: relative;
+    z-index: 2;
 }
 
 #home_vac .title_text {
@@ -2749,6 +2766,8 @@ strong {
     color: #fff;
 }
 
+/*
+
 .infographicBox {
     display: flex;
     justify-content: center;
@@ -2829,14 +2848,86 @@ strong {
     justify-content: center;
     height: 100%;
 }
-
+*/
 #infographic .title_text,
 .subTextBox {
     width: 50vw;
-    color: #fff;
 }
 
 .subTextBox {
     text-align: center;
     margin: var(--margin) auto calc(var(--margin) * 2);
+}
+
+
+#infographic_content {
+    padding-top: var(--fixed-size);
+}
+
+.infographicBoxCard {
+    border-radius: 11px;
+    background-color: var(--accent-color);
+    padding: 20px;
+    height: calc( (100vw - 2 * var(--fixed-size) - 200px) / 4 );
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.infographicBoxCard:nth-child(1){
+    transform: rotate(2deg) translateX(-5px) translateY(20px);
+    --accent-color: #232323;
+    color: #fff;
+}
+
+.infographicBoxCard:nth-child(1) .infographicBoxCard_number{
+    background-color: #171717;
+}
+
+.infographicBoxCard:nth-child(2){
+    transform: rotate(-1deg) translateY(10px);
+    --accent-color: #fde5c4;
+}
+
+.infographicBoxCard:nth-child(2) .infographicBoxCard_number{
+    background-color: #d4ba95;
+}
+
+.infographicBoxCard:nth-child(3){
+    transform: rotate(1deg) translateY(0px);
+     --accent-color: #ff5821;
+     color: #fff;
+}
+
+.infographicBoxCard:nth-child(3) .infographicBoxCard_number{
+    background-color: #d54a1b;
+}
+
+.infographicBoxCard:nth-child(4){
+    transform: rotate(-1deg) translateX(-5px) translateY(20px);
+     --accent-color: #a0a0a0;
+}
+
+.infographicBoxCard:nth-child(4) .infographicBoxCard_number{
+    background-color: rgb(116, 113, 112);
+}
+
+.infographicList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.infographicBoxCard_number {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+#ar_portfolio .title_text {
+    margin-bottom: 0;
 }
