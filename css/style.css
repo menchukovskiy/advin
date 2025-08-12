@@ -2548,6 +2548,7 @@ strong {
     text-transform: none;
     margin-top: 15px;
     line-height: 1.2;
+    letter-spacing: 2px;
 }
 
 .lp_start_screen_text {
@@ -2868,47 +2869,64 @@ strong {
     border-radius: 11px;
     background-color: var(--accent-color);
     padding: 20px;
-    height: calc( (100vw - 2 * var(--fixed-size) - 200px) / 4 );
+    height: calc((100vw - 2 * var(--fixed-size) - 200px) / 4);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
 }
 
-.infographicBoxCard:nth-child(1){
+.infographicBoxCard:nth-child(1) {
+    animation: infographicBoxCard1 linear;
+    animation-timeline: view();
+    animation-range-start: cover;
+   animation-range-end: 60vh;
     transform: rotate(2deg) translateX(-5px) translateY(20px);
     --accent-color: #232323;
     color: #fff;
 }
 
-.infographicBoxCard:nth-child(1) .infographicBoxCard_number{
+.infographicBoxCard:nth-child(1) .infographicBoxCard_number {
     background-color: #171717;
 }
 
-.infographicBoxCard:nth-child(2){
+.infographicBoxCard:nth-child(2) {
+    animation: infographicBoxCard2 linear;
+    animation-timeline: view(30px);
+    animation-range-start: cover;
+    animation-range-end: 60vh;
     transform: rotate(-1deg) translateY(10px);
     --accent-color: #fde5c4;
 }
 
-.infographicBoxCard:nth-child(2) .infographicBoxCard_number{
+.infographicBoxCard:nth-child(2) .infographicBoxCard_number {
     background-color: #d4ba95;
 }
 
-.infographicBoxCard:nth-child(3){
+.infographicBoxCard:nth-child(3) {
+    animation: infographicBoxCard3 linear;
+    animation-timeline: view(50px);
+    animation-range-start: cover;
+    animation-range-end: 60vh;
     transform: rotate(1deg) translateY(0px);
-     --accent-color: #ff5821;
-     color: #fff;
+    --accent-color: #ff5821;
+    color: #fff;
 }
 
-.infographicBoxCard:nth-child(3) .infographicBoxCard_number{
+.infographicBoxCard:nth-child(3) .infographicBoxCard_number {
     background-color: #d54a1b;
 }
 
-.infographicBoxCard:nth-child(4){
+.infographicBoxCard:nth-child(4) {
+    animation: infographicBoxCard4 linear;
+    animation-timeline: view(70px);
+    animation-range-start: cover;
+    animation-range-end: 60vh;
     transform: rotate(-1deg) translateX(-5px) translateY(20px);
-     --accent-color: #a0a0a0;
+    --accent-color: #a0a0a0;
 }
 
-.infographicBoxCard:nth-child(4) .infographicBoxCard_number{
+.infographicBoxCard:nth-child(4) .infographicBoxCard_number {
     background-color: rgb(116, 113, 112);
 }
 
@@ -2930,4 +2948,233 @@ strong {
 
 #ar_portfolio .title_text {
     margin-bottom: 0;
+}
+
+#svg-stage .title {
+    font-family: 'Blender Pro Bold';
+}
+
+#svg-stage .about {
+    font-size: .3rem;
+    line-height: 1;
+}
+
+.svgHidden {
+    visibility: hidden;
+}
+
+body {
+    --light: #242423;
+    width: 100%;
+    height: 400vh;
+    color: var(--light);
+    font-family: "Mori", sans-serif;
+}
+
+.header-section {
+    position: relative;
+    text-align: center;
+    margin: 100px auto 0;
+}
+
+#svg-stage {
+    overflow: visible;
+}
+
+.ball {
+    fill: var(--light);
+    visibility: hidden;
+}
+
+.point {
+    visibility: hidden;
+    fill: #9a027e;
+}
+
+#svg-stage .line {
+    fill: none;
+    stroke: var(--light);
+    stroke-width: 2px;
+}
+
+#svg-stage text {
+    fill: var(--light);
+    font-size: 15px;
+    //visibility: hidden;
+}
+
+#svg-stage .theLine {
+    stroke: var(--light);
+}
+
+#map {
+    background-color: #ffd3a3;
+    overflow: hidden;
+}
+
+
+#svg-stage {
+    margin-top: -200px;
+}
+
+#afterMap {
+    margin-top: -100px;
+}
+
+.orangeCircle circle {
+    fill: #ff5821;
+}
+
+#svg-stage .title {
+    fill: #be4017;
+}
+
+#ca_01,
+#ca_02,
+.circleSpin {
+    animation: rotate 15s linear infinite;
+    transform-origin: center center;
+    transform-box: content-box;
+
+}
+
+.crossSVG {
+    animation: rotate2 10s linear infinite;
+    transform-origin: center center;
+    transform-box: content-box;
+}
+
+#afterMap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#ar_show_content_bg {
+    animation: arShowContentBG linear;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end: 50vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: url(../img/fbbox_bg.png);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    opacity: .3;
+    z-index: 0;
+}
+
+#infographic_content .title_text,
+#infographic_content .subTextBox {
+    animation: arShowContent linear;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end: 50vh;
+}
+
+#ar_show_content_video{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ar_show_content_text {
+    display: flex;
+    justify-content: center;
+
+    flex-direction: column;
+}
+
+#ar_show_content_text_title {
+    font-family: 'Blender Pro Bold';
+    font-size: 3rem;
+    line-height: .8;
+    margin-bottom: 15px;
+}
+
+
+:root {
+  --bg-background: #111827;
+  --clr-card: #ffffff;
+  --clr-1: #ff7328;
+  --clr-2: #ff7328;
+  --clr-3: #ffffff;
+}
+
+#ar_show_content_wrap {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 11px;
+    overflow: hidden;
+}
+
+#ar_show_content {
+    width: 60vw;
+    height: calc(100vh - 2 * var(--fixed-size) - 200px  );
+    background-color: #fff;
+    border-radius: 11px;
+    animation: arShowContent linear;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end: 50vh;
+    position: relative;
+    z-index: 1;
+    box-shadow: 3px 3px 20px #4a4a4a;
+    
+}
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 90deg;
+  inherits: false;
+}
+
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#ar_show_content:after,
+#ar_show_content:before {
+    content: " ";
+  position: absolute;
+  z-index: -1;
+  inset: -6px;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--clr-card),
+    var(--clr-1),
+    var(--clr-2),
+    var(--clr-3),
+    var(--clr-2),
+    var(--clr-1),
+    var(--clr-card)
+  );
+  border-radius: inherit;
+  animation: rotate 3.5s linear infinite;
+}
+
+#ar_show_content:after {
+  filter: blur(3rem);
+}
+
+@keyframes rotate {
+  0% {
+    --gradient-angle: 0deg;
+  }
+  100% {
+    --gradient-angle: 360deg;
+  }
 }

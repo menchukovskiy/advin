@@ -1,6 +1,11 @@
 select = e => document.querySelector(e)
 selectAll = e => document.querySelectorAll(e)
 
+gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin, MotionPathPlugin);
+gsap.defaults({ ease: "none" });
+
+    
+
 const stage = select('.stage')
 
 const arPorfolioSetting = {
@@ -225,6 +230,68 @@ const initSolution = () => {
 
 }
 
+const initMap = () => {
+    const pulses = gsap
+        .timeline({
+            defaults: {
+                duration: 0.05,
+                autoAlpha: 1,
+                scale: 1.5,
+                transformOrigin: "center",
+                ease: "elastic(2.5, 1)"
+            }
+        })
+        .to("#icon1, #text01", {}, 0.2)
+        .to("#icon2, #text02", {}, 0.38)
+        .to("#icon3, #text03", {}, 0.58)
+        .to("#icon4, #text04", {}, 0.78);
+
+    const main = gsap
+        .timeline({
+            defaults: { duration: 1 },
+            scrollTrigger: {
+                trigger: "#svg-stage",
+                scrub: true,
+                start: "top center",
+                end: "bottom center"
+            }
+        })
+
+        .to("#point", { duration: 0.01, autoAlpha: 1 })
+        .from(".theLine", { drawSVG: 0 }, 0)
+        .to(
+            "#point",
+            {
+                motionPath: {
+                    path: ".theLine",
+                    align: ".theLine",
+                    alignOrigin: [0.5, 0.5]
+                }
+            },
+            0
+        )
+        .add(pulses, 0);
+
+
+    const afterMap = gsap.fromTo('#afterMap',
+        { backgroundColor: "#fff" },
+        {
+            backgroundColor: "#ff5821",
+            scrollTrigger: {
+                trigger: '#afterMap',
+                scrub: true,
+                start: "top bottom",
+                end: ".5px",
+                snap: {
+                    snapTo: 0.5, // 0.5 'cause the scroll animation range is 200vh for parallax effect
+                    duration: 1,
+                    ease: 'power4.inOut'
+                }
+            },
+            ease: 'none'
+        })
+}
+
 
 const init = () => {
     gsap.set(stage, { autoAlpha: 1 })
@@ -232,6 +299,7 @@ const init = () => {
     initArPortfoloi()
     initLpHomeStartScreen()
     initSolution()
+    initMap()
 }
 
 document.addEventListener('DOMContentLoaded', function () {
