@@ -278,3 +278,24 @@
           transform: rotate(-1deg) translateX(-5px) translateY(20px);
     } 
 }
+
+@keyframes showLeft{
+     from {
+         transform: translateX(-100%) ;
+    }
+
+    to {
+          transform: translateX(0%) ;
+    } 
+}
+
+@keyframes showRight{
+     from {
+         transform: translateX(100%) ;
+    }
+
+    to {
+          transform: translateX(0%) ;
+    } 
+}
+

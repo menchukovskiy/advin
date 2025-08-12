@@ -3008,13 +3008,18 @@ body {
 }
 
 #map {
-    background-color: #ffd3a3;
+   /*background-color: #ffd3a3;*/
+   background-color: var(--dark-color);
     overflow: hidden;
 }
 
 
 #svg-stage {
     margin-top: -200px;
+}
+
+#svg-stage text {
+    fill:#fff;
 }
 
 #afterMap {
@@ -3026,7 +3031,7 @@ body {
 }
 
 #svg-stage .title {
-    fill: #be4017;
+    fill: #ff5921;
 }
 
 #ca_01,
@@ -3081,6 +3086,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: inherit;
+}
+
+#ar_show_content_video video {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
 }
 
 #ar_show_content_text {
@@ -3112,7 +3124,7 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     width: 100%;
-    height: 100%;
+    height: inherit;
     background-color: #fff;
     border-radius: 11px;
     overflow: hidden;
@@ -3163,18 +3175,159 @@ body {
     var(--clr-card)
   );
   border-radius: inherit;
-  animation: rotate 3.5s linear infinite;
+  animation: rotateGradient 3.5s linear infinite;
 }
 
 #ar_show_content:after {
   filter: blur(3rem);
 }
 
-@keyframes rotate {
+@keyframes rotateGradient {
   0% {
     --gradient-angle: 0deg;
   }
   100% {
     --gradient-angle: 360deg;
   }
+}
+
+#lp_review {
+    padding-top: var(--padding-frame);
+    padding-bottom: var(--padding-frame);
+}
+
+#lp_review_wrap {
+    width: 100%;
+    height: calc(100vh - (var(--fixed-size) * 2) - 150px - 10vh);
+    align-items: center;
+    display: grid;
+    grid-template-columns: 2fr 1.2fr;
+    gap: 15px;
+}
+
+#lp_review_slider {
+    position: relative;
+}
+
+.lp_review_slider_box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: var(--blog-item-border-radius);
+    min-height: 330px;
+}
+
+.lp_review_slider_box {
+    position: relative;
+    display: grid;
+    gap: 50px;
+    grid-template-columns: 1.2fr 3fr;
+}
+
+.lp_review_slider_box_about {
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.lp_review_slider_box_about_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lp_review_slider_box_about_logo {
+    width: 60%;
+}
+
+.lp_review_slider_box_about_logo img {
+    width: 100%;
+}
+
+.lp_review_slider_box_about_name {
+    font-weight: bold;
+}
+
+.lp_review_slider_box_about_job_title {
+    font-size: .8rem;
+    margin-top: 5px;
+}
+
+.lp_review_slider_box_text {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+#lp_review_wrap .feadback_box {
+    padding-bottom: 0;
+}
+
+.lp_review_slider_box_about_btn .btn{
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.lp_review_slider_box_about_btn .btn:last-of-type {
+    margin-bottom: 0;
+}
+
+.lp_review_slider_box_text_content {
+    padding: 30px;
+    border-left: 1px solid #a8a8a8;
+    font-size: .9rem;
+}
+
+#lp_review_slider_control {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+#lp_review_slider_control .btn {
+    width: var(--btn-height);
+}
+
+#lp_review_slider_control .btn:hover .btn__content {
+    fill: #fff;
+}
+
+#lp_review_slider_control .btn__content {
+    height: 60%;
+    width: 60%;
+    fill: #4a4a4a;
+}
+
+#lp_review_slider_control [data-type="prev"] {
+    transform: rotate(180deg);
+}
+
+#lp_review .title_text,
+#lp_review_wrap,
+#lp_solution .title_text {
+    animation: arShowContent linear;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end: 50vh;
+}
+
+#lp_solution .tabContents {
+    animation: showLeft linear;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end: 50vh;
+}
+
+#lp_solution .tabControl {
+    
+    animation: showRight linear;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end: 50vh;
+
+}
+
+#svgScreenTitle text {
+    font-family: 'Blender Pro Bold';
+    font-size: 1rem;
 }

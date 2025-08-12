@@ -241,6 +241,7 @@ const initMap = () => {
                 ease: "elastic(2.5, 1)"
             }
         })
+        .to("#svgScreenTitle", {}, 0.1)
         .to("#icon1, #text01", {}, 0.2)
         .to("#icon2, #text02", {}, 0.38)
         .to("#icon3, #text03", {}, 0.58)
