@@ -2407,6 +2407,16 @@ strong {
 
 #ar_portfolio {
     padding-top: var(--fixed-size);
+    background-color: var(--dark-color);
+}
+
+#ar_portfolio .title_text {
+    color: #fff;
+}
+
+#lp_portfolio_wrap {
+    position: relative;
+    z-index: 1;
 }
 
 #ar_portfolio_wrap {
@@ -3227,7 +3237,7 @@ body {
     min-height: 100px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .lp_review_slider_box_about_text {
@@ -3257,15 +3267,22 @@ body {
    display: flex;
    justify-content: center;
    align-items: center;
+   flex-direction: column;
+   margin-bottom: 40px;
 }
 
 #lp_review_wrap .feadback_box {
     padding-bottom: 0;
 }
 
+.lp_review_slider_box_about_btn {
+    position: absolute;
+    bottom: 20px;
+    right: 150px;
+}
+
 .lp_review_slider_box_about_btn .btn{
-    width: 100%;
-    margin-bottom: 8px;
+   
 }
 
 .lp_review_slider_box_about_btn .btn:last-of-type {
