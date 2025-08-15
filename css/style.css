@@ -2422,7 +2422,6 @@ strong {
 #ar_portfolio_wrap,
 #vr_portfolio_wrap {
     width: 100%;
-    overflow: hidden;
     height: calc(100vh - 2 * var(--fixed-size));
     position: relative;
 }
@@ -2434,13 +2433,16 @@ strong {
     height: inherit;
 }
 
-#sliderBoxAr,
-#sliderBoxVr {
+#sliderBoxAr {
     position: absolute;
     width: 100%;
     height: 300px;
     overflow: hidden;
     bottom: var(--ar-portfolio-bottom);
+}
+
+#sliderBoxVr {
+    height: 60vh;
 }
 
 #phoneBoxAr,
@@ -2507,6 +2509,10 @@ strong {
     opacity: 1;
     transition: 200ms;
     border-radius: 0;
+}
+
+#sliderBoxVr .slideBox.is-active {
+    border-radius: 20px;
 }
 
 #sliderArPort-list,
@@ -2718,6 +2724,10 @@ strong {
     flex-grow: 1;
 }
 
+.home_portfolio_slide_about_bottom_btn {
+    text-align: right;
+}
+
 .lp_solution_content_text {
     width: 70%;
     padding-right: 5%;
@@ -2727,6 +2737,7 @@ strong {
 
 .feadback_box {
     padding-bottom: 30px;
+    padding-top: 30px;
 }
 
 .feadback_box_wrap {
@@ -2990,13 +3001,6 @@ strong {
     visibility: hidden;
 }
 
-body {
-    --light: #242423;
-    width: 100%;
-    height: 400vh;
-    color: var(--light);
-    font-family: "Mori", sans-serif;
-}
 
 .header-section {
     position: relative;
@@ -3080,6 +3084,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#lp_seo_text.afterMap {
+    margin-top: -100px;
+    background: #EBEBEB;
+    //background: var(--body-bg-gradient);
 }
 
 
