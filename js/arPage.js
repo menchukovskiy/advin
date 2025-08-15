@@ -293,6 +293,41 @@ const initMap = () => {
         })
 }
 
+   const initSeoTab = () => {
+
+      const hiddenTab = () => {
+        document.querySelectorAll('.lp_seo_text_content_box').forEach( i => i.classList.remove('open') )
+      }
+
+      const tabControl = document.querySelectorAll('.lp_seo_text_controller_box_btn .btn')
+
+      tabControl.forEach( item => {
+        item.addEventListener( 'click', () => {
+          hiddenTab()
+          document.querySelector('.lp_seo_text_content_box[data-box="'+ item.getAttribute('data-box') +'"]').classList.add('open')
+          document.querySelector('.lp_seo_text_controller').scrollIntoView({
+            behavior: 'smooth',
+        });
+          
+        } )
+       
+      } )
+
+
+
+      document.querySelectorAll('.closeSEOText').forEach( item => {
+        item.addEventListener( 'click', () => {
+        document.querySelector('#lp_seo_text').scrollIntoView({
+            behavior: 'smooth'
+        });
+        hiddenTab()
+     })
+      } )
+
+      
+    }
+
+
 
 const init = () => {
     gsap.set(stage, { autoAlpha: 1 })
@@ -301,6 +336,7 @@ const init = () => {
     initLpHomeStartScreen()
     initSolution()
     initMap()
+    initSeoTab()
 }
 
 document.addEventListener('DOMContentLoaded', function () {
