@@ -41,7 +41,6 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
     <link href="
 https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 " rel="stylesheet">
-    <script src="js/slick.js"></script>
 
 
 
@@ -105,7 +104,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 
         <div id="serv_btn" class="flex_main flex_wrap flex_jcontent_center flex_align_items_center lp_page">
 
-            <button class="btn btn_with_svg shadow open" onclick="location.href='vr.html'">
+            <button class="btn btn_with_svg shadow" onclick="location.href='vr.html'">
                 <span class="btn__content">
                     <span class="text-label tekture_bold">virtual reality</span>
                     <span class="svg" style="width: 32px; height: 32px;">
@@ -129,7 +128,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                 </span>
             </button>
 
-            <button class="btn btn_with_svg shadow" onclick="location.href='3d.html'">
+            <button class="btn btn_with_svg shadow open" onclick="location.href='3d.html'">
                 <span class="btn__content">
                     <span class="text-label tekture_bold">3d production</span>
                     <span class="svg" style="width: 32px; height: 32px;">
@@ -485,12 +484,12 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                 <div class="wrap" id="lp_start_screen_content">
                     <div class="lp_start_screen_text">
                         <div class="header_title">
-                            <div><span class="letters">Virtual</span></div>
-                            <div><span class="letters">Reality</span></div>
+                            <div><span class="letters">3D/2D</span></div>
+                            <div><span class="letters">PRODUCTION</span></div>
                             <div><span class="letters">for Brands</span></div>
                         </div>
                         <div class="header_secondary_title">
-                            Залучайте клієнтів інтерактивними VR‑досвідами
+                            Залучайте клієнтів інтерактивними досвідами
                         </div>
                         <div class="lp_start_screen_btn">
                             <button class="btn btn_with_svg shadow btn_active">
@@ -515,13 +514,14 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                 <div id="decoration"></div>
             </section>
 
+
             <section class="screen" id="lp_portfolio">
                 <div id="lp_portfolio_wrap">
                     <div class="title_text">our cases</div>
 
-                    <div id="vr_portfolio_wrap">
-                        <div id="sliderBoxVr">
-                            <section id="sliderVrPort" class="splide">
+                    <div id="ar_portfolio_wrap">
+                        <div id="sliderBoxAr">
+                            <section id="sliderArPort" class="splide">
                                 <div class="splide__track">
                                     <ul class="splide__list">
                                         <!--01-->
@@ -698,6 +698,11 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                                 </div>
                             </section>
                         </div>
+
+                        <div id="ipadBoxAr">
+                            <img src="img/ipad.png" />
+                        </div>
+
                     </div>
                 </div>
 
@@ -712,10 +717,11 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 
             </section>
 
+
             <section class="screen" id="lp_solution">
 
                 <div class="wrap">
-                    <div class="title_text">VR Solutions</div>
+                    <div class="title_text">AR Solutions</div>
                     <div class="tabContainer">
                         <div class="tabContents">
                             <div class="tabContent">
@@ -825,10 +831,10 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 
                         </div>
                         <div class="tabControl">
-                            <div class="tabButton">VR GAME<small class="text-eyebrow">01/</small></div>
-                            <div class="tabButton">VR ДОДАТОК<small class="text-eyebrow">02/</small></div>
-                            <div class="tabButton">VR ТРЕНАЖЕР<small class="text-eyebrow">03/</small></div>
-                            <div class="tabButton">VR 360<small class="text-eyebrow">04/</small>
+                            <div class="tabButton">Web AR<small class="text-eyebrow">01/</small></div>
+                            <div class="tabButton">CUSTOM APP AR<small class="text-eyebrow">02/</small></div>
+                            <div class="tabButton">AR Mirror<small class="text-eyebrow">03/</small></div>
+                            <div class="tabButton">AR Filter in Snapchat, TikTok<small class="text-eyebrow">04/</small>
                             </div>
                             <section class="feadback_box">
                                 <div class="feadback_box_wrap">
@@ -1354,14 +1360,14 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 
             <section class="screen" id="map">
 
-                <svg id="svg-stage" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1202.07">
+                    <svg id="svg-stage" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1202.07">
 
                     <g id="svgScreenTitle" class="svgHidden" data-name="title">
                         <text transform="translate(75 125)">
                             Як бренду інтегрувати
                         </text>
                         <text transform="translate(75 140)">
-                            Віртуальну реальність
+                            Production рішення
                         </text>
                     </g>
 
@@ -1978,14 +1984,51 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 
             </section>
 
-         
+            <section class="screen wrap" id="afterMap">
 
+                <div id="ar_show_content">
+                    <div id="ar_show_content_wrap">
 
-            <section class="screen afterMap" id="lp_seo_text">
+                        <div id="ar_show_content_video">
+                            <video muted autoplay loop>
+                                <source src="img/arLp.webm" type="video/webm" />
+                            </video>
+                        </div>
+
+                        <div id="ar_show_content_text">
+                            <div id="ar_show_content_text_title">
+                                Відчуйте, як це працює
+                            </div>
+                            <div id="ar_show_content_text_about">
+                                Подивіться, як AR виглядає в дії
+                            </div>
+                            <div id="ar_show_content_text_btn">
+                                <button class="btn btn_with_svg shadow btn_active">
+                                    <span class="btn__content">
+                                        <span class="text-label tekture_bold">Спробувати</span>
+                                        <span class="svg" style="width: 32px; height: 32px;">
+                                            <svg viewBox="0 0 142 77" width="32" height="32">
+                                                <path
+                                                    d="M71.1795 77H54.5395L49.4195 62.28H22.6675C22.1555 63.9013 21.2595 66.376 19.9795 69.704C18.7848 72.9467 17.9315 75.3787 17.4195 77H0.7795L27.4035 0.199997H44.6835L71.1795 77ZM44.6835 47.304L35.9795 22.6C35.0408 25.3307 33.5902 29.4693 31.6275 35.016C29.7502 40.4773 28.3422 44.5733 27.4035 47.304H44.6835ZM137.494 29.512C137.494 32.6693 136.683 35.4427 135.062 37.832C134.55 38.6853 133.483 39.88 131.862 41.416C130.326 42.952 129.088 44.0613 128.15 44.744C127.467 45.256 126.443 45.8533 125.078 46.536L141.718 77H124.31L109.078 47.688H96.7895V77H81.1735V0.199997H118.55C122.304 0.199997 125.504 1.18133 128.15 3.144C130.71 5.10666 133.014 7.45333 135.062 10.184C136.683 12.4027 137.494 15.2187 137.494 18.632V29.512ZM121.878 29.64V18.248C121.024 16.8827 119.915 15.8587 118.55 15.176H96.7895V32.712H118.55C118.806 32.712 119.318 32.3707 120.086 31.688C120.939 30.92 121.536 30.2373 121.878 29.64Z">
+                                                </path>
+                                            </svg>
+                                        </span>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="ar_show_content_bg"></div>
+
+            </section>
+
+            <section class="screen" id="lp_seo_text">
 
                 <div class="lp_seo_text_wrap wrap">
 
-                    <div class="title_text">VR розробка</div>
+                    <div class="title_text">AR розробка</div>
                     <div class="lp_seo_text_ant">Доповнена реальність (Augmented reality) – технологія, що доповнює
                         повсякденний світ трьохмірними цифровими об’єктами. Побачити їх можна за допомогою звичайного
                         смартфона, окулярів доповненої реальності чи навіть комп’ютера. Якщо раніше AR-розробки
@@ -2536,7 +2579,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 
 
     <script src="js/index.js"></script>
-    <script src="js/vrPage.js"></script>
+    <script src="js/3dPage.js"></script>
 </body>
 
 </html>
